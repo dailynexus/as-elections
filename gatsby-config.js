@@ -22,6 +22,13 @@ module.exports = {
         },
         `gatsby-transformer-csv`,
         `gatsby-transformer-sharp`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                implementation: require("sass"),
+                useResolveUrlLoader: true,
+            },
+        },
         `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-manifest`,

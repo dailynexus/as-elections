@@ -10,9 +10,9 @@ import Position from "../components/position"
 
 const IndexPage = ({ data }) => {
   var electionPositions = [];
-  data.allCandidatesCsv.edges.forEach(({ node }) => {
-    if (electionPositions.indexOf(node.Running_For) === -1) {
-      electionPositions.push(node.Running_For);
+  data.allCandidatesCsv.nodes.forEach((node) => {
+    if (electionPositions.indexOf(node.position) === -1) {
+      electionPositions.push(node.position);
     }
   });
 
@@ -21,18 +21,24 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <h1>{data.site.siteMetadata.title}</h1>
 
-      {electionPositions.map((position) => {
-        let matchingCandidates = [];
-        data.allCandidatesCsv.edges.forEach(({ node }) => {
-          if (node.Running_For === position) {
-            matchingCandidates.push(node);
-          }
-        });
+      <div className="content">
+        <div className="menu" />
 
-        return (
-          <Position key={position} title={position} candidates={matchingCandidates} />
-        );
-      })}
+        <section className="candidates">
+          {electionPositions.map((position) => {
+            let matchingCandidates = [];
+            data.allCandidatesCsv.nodes.forEach((node) => {
+              if (node.position === position) {
+                matchingCandidates.push(node);
+              }
+            });
+
+            return (
+              <Position key={position} title={position} candidates={matchingCandidates} />
+            );
+          })}
+        </section>
+      </div>
 
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
@@ -44,10 +50,8 @@ export default IndexPage
 export const query = graphql`
 query {
   allCandidatesCsv {
-    edges {
-      node {
-        ...candidateFields
-      }
+    nodes {
+      ...candidateFields
     }
   }
 
@@ -60,12 +64,14 @@ query {
 
 fragment candidateFields on CandidatesCsv {
   id
-  Running_For
-  Name
-  Pronouns
-  Party
-  Year
-  Major
+  position: Running_For
+  name: Name
+  party: Party
+  photoURL: Photo_URL
+  pronouns: Pronouns
+  interviewURL: Interview_URL
+  year: Year
+  major: Major
   BlurbP1
   BlurbP2
   Q1

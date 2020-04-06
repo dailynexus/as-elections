@@ -7,13 +7,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Candidate from "./candidate";
+
 const Position = ({ title, candidates }) => {
   return (
     <div className="position">
       <h2 className="position-title">{title}</h2>
-      {candidates.map((candidate) => (
-        <div>{candidate.Name}</div>
-      ))}
+      <div className="candidates">
+        {candidates.map((candidate) => (
+          <Candidate candidateData={candidate} />
+        ))}
+      </div>
     </div>
   )
 };
