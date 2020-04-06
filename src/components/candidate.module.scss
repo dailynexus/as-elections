@@ -1,5 +1,23 @@
+@use "../styles/base";
 @use "../styles/config";
 
 .candidate {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+
     background-color: config.$colors-white;
+    font-family: config.$fonts-font-stack;
+}
+
+.candidateInfo {
+    text-align: center;
+}
+
+.candidateName {
+    font-size: 1.5rem;
+}
+
+.candidateParty {
+    font-size: 1rem;
 }

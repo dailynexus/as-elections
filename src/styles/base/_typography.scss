@@ -1,0 +1,10 @@
+@use "../config";
+
+body {
+    font-family: config.$fonts-font-stack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: config.$fonts-font-stack-header;
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+@use "../styles/base";
+@use "../styles/config";
+
+.candidates {
+    @include base.flex(row, center, flex-start);
+}

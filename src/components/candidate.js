@@ -17,9 +17,9 @@ const Candidate = ({ candidateData }) => {
 
   return (
     <div className={styles.candidate}>
-      <div className="candidate-basic-info">
-        <div className="candidate-name">{candidateData.name}</div>
-        <div className="candidate-party">{candidateData.party}</div>
+      <div className={styles.candidateInfo}>
+        <h3 className={styles.candidateName}>{candidateData.name}</h3>
+        <h4 className={styles.candidateParty}>{candidateData.party}</h4>
         <img className="candidate-portrait" src={candidateData.photoURL} />
       </div>
       {candidateBlurbP1}

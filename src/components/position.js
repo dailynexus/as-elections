@@ -7,13 +7,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styles from "./position.module.scss";
 import Candidate from "./candidate";
 
 const Position = ({ title, candidates }) => {
   return (
     <div className="position">
       <h2 className="position-title">{title}</h2>
-      <div className="candidates">
+      <div className={styles.candidates}>
         {candidates.map((candidate) => (
           <Candidate candidateData={candidate} />
         ))}
