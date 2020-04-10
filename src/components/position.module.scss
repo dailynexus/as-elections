@@ -1,6 +1,12 @@
 @use "../styles/base";
 @use "../styles/config";
 
+.positionTitle {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .candidates {
     @include base.flex(row, center, flex-start);
 }

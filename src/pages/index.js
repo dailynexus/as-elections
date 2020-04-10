@@ -19,8 +19,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
 
-      <h1>{data.site.siteMetadata.title}</h1>
-
       <div className="content">
         <div className="menu" />
 

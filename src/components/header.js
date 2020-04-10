@@ -1,38 +1,51 @@
-import { Link } from "gatsby"
+/**
+ * Header for the entire interactive site.
+ */
+
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Img from "gatsby-image"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+import styles from "./header.module.scss"
+
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          siteHomeUrl
+        }
+      }
+
+      logoImage: file(relativePath: {eq: "daily-nexus-logo.png"}) {
+        childImageSharp {
+          fixed(width: 210, height: 42) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.menu}></div>
+
+      <h1 className={styles.headerLogo}>
+        <a href={data.site.siteMetadata.siteHomeUrl}>
+          <Img fixed={data.logoImage.childImageSharp.fixed} />
+        </a>
       </h1>
-    </div>
-  </header>
-)
+
+      <div className={styles.sharing}></div>
+    </header>
+  )
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  interactiveURL: PropTypes.string,
 }
 
 Header.defaultProps = {

@@ -2,8 +2,7 @@
 @use "../styles/config";
 
 .candidate {
-    flex: 1;
-    min-width: 300px;
+    width: 300px;
     padding: 10px;
 
     background-color: config.$colors-white;

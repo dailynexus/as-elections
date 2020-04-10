@@ -13,7 +13,7 @@ import Candidate from "./candidate";
 const Position = ({ title, candidates }) => {
   return (
     <div className="position">
-      <h2 className="position-title">{title}</h2>
+      <h2 className={styles.positionTitle}>{title}</h2>
       <div className={styles.candidates}>
         {candidates.map((candidate) => (
           <Candidate candidateData={candidate} />
