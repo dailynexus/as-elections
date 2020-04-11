@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-
+import Menu from "../components/menu"
 import Position from "../components/position"
+import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   var electionPositions = [];
@@ -19,9 +19,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
 
-      <div className="content">
-        <div className="menu" />
+      <Menu />
 
+      <div className="content">
         <section className="candidates">
           {electionPositions.map((position) => {
             let matchingCandidates = [];

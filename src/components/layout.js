@@ -5,30 +5,31 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Header from "../components/header"
 
 import "./layout.css"
 
-library.add(faBars);
+function Layout({ children }) {
+  const [isMenuActive, setIsMenuActive] = useState(true);
 
-const Layout = ({ children }) => {
+  const childrenWithProps = React.Children.map(children, (child) => 
+    React.cloneElement(child, { isMenuActive: isMenuActive })
+  );
+
   return (
     <>
-      <Header />
+      <Header isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
 
       <div
         style={{
           margin: `0 auto`,
           maxWidth: 960,
           padding: `6rem 1.0875rem 1.45rem`, }}
-      >
-        <main>{children}</main>
+        >
+        <main>{childrenWithProps}</main>
         <footer>
           © {new Date().getFullYear()} The Daily Nexus
         </footer>

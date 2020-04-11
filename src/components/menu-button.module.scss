@@ -1,0 +1,8 @@
+.menuButton {
+    cursor: pointer;
+    user-select: none;
+
+    button:focus {
+        outline: none;
+    }
+}

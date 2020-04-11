@@ -5,11 +5,12 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useState } from "react"
 import Img from "gatsby-image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import MenuButton from "./menu-button"
 
 import styles from "./header.module.scss"
 
-function Header() {
+function Header({ isMenuActive, setIsMenuActive} ) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -31,10 +32,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.menu}>
-        <FontAwesomeIcon className={styles.faBars} icon="bars" />
-        MENU
-      </div>
+      <MenuButton isActive={isMenuActive} setActive={setIsMenuActive} />
 
       <h1 className={styles.headerLogo}>
         <a href={data.site.siteMetadata.siteHomeUrl}>
