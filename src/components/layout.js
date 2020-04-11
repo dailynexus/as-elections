@@ -8,9 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 import Header from "../components/header"
 
 import "./layout.css"
+
+library.add(faBars);
 
 const Layout = ({ children }) => {
   return (

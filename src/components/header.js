@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from "./header.module.scss"
 
@@ -31,7 +32,10 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.menu}></div>
+      <div className={styles.menu}>
+        <FontAwesomeIcon className={styles.faBars} icon="bars" />
+        MENU
+      </div>
 
       <h1 className={styles.headerLogo}>
         <a href={data.site.siteMetadata.siteHomeUrl}>
