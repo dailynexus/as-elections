@@ -3,14 +3,13 @@
  */
 
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from "./header.module.scss"
 
-const Header = () => {
+function Header() {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -45,15 +44,7 @@ const Header = () => {
 
       <div className={styles.sharing}></div>
     </header>
-  )
-}
-
-Header.propTypes = {
-  interactiveURL: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  );
 }
 
 export default Header
