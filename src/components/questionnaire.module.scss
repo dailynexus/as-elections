@@ -1,0 +1,33 @@
+@use '../styles/base';
+@use '../styles/config';
+
+.modal {
+    position: absolute;
+    max-width: 960px;
+
+    inset: 30px;
+    outline: none;
+    border: 1px solid rgb(204, 204, 204);
+    margin: 0 auto;
+    padding: 40px;
+    
+    background: config.$colors-white none repeat scroll 0% 0%;
+    overflow: auto;
+}
+
+.modalHeader {
+    position: sticky;
+    top: -40px;
+
+    margin-top: -40px;
+    padding: 10px;
+    background: config.$colors-white;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+}

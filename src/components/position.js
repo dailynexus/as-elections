@@ -7,16 +7,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./position.module.scss";
 import Candidate from "./candidate";
 
-const Position = ({ title, candidates }) => {
+import styles from "./position.module.scss";
+
+const Position = ({ title, candidates, questionData }) => {
   return (
-    <div className="position">
+    <div className={styles.position}>
       <h2 className={styles.positionTitle}>{title}</h2>
       <div className={styles.candidates}>
         {candidates.map((candidate) => (
-          <Candidate candidateData={candidate} />
+          <Candidate candidateData={candidate} questionData={questionData} />
         ))}
       </div>
     </div>
@@ -26,6 +27,7 @@ const Position = ({ title, candidates }) => {
 Position.propTypes = {
   title: PropTypes.string.isRequired,
   candidates: PropTypes.array.isRequired,
+  questionData: PropTypes.object.isRequired,
 };
 
 export default Position

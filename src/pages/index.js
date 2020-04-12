@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
             });
 
             return (
-              <Position key={position} title={position} candidates={matchingCandidates} />
+              <Position key={position} title={position} candidates={matchingCandidates} questionData={data.allQuestionsJson.nodes}/>
             );
           })}
         </section>
@@ -48,6 +48,13 @@ query {
   allCandidatesCsv {
     nodes {
       ...candidateFields
+    }
+  }
+
+  allQuestionsJson {
+    nodes {
+      id
+      question
     }
   }
 

@@ -23,6 +23,7 @@ module.exports = {
             },
         },
         `gatsby-transformer-csv`,
+        `gatsby-transformer-json`,
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-sass`,

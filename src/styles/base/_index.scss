@@ -1,2 +1,8 @@
+@use "disable-scrolling-modal";
 @forward "mixins";
 @use "typography";
+@use "../config";
+
+body {
+    background: config.$colors-background;
+}
