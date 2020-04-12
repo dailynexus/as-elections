@@ -2,12 +2,14 @@
  * Represents a single candidate for a position.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./candidate.module.scss";
 
-const Candidate = ({ candidateData }) => {
+function Candidate({ candidateData }) {
+  const [isQuestionnaireOpen, setIsQuestionnaireOpen] = useState(false);
+
   let candidateBlurbP1;
   let candidateBlurbP2;
   if (candidateData.BlurbP1 !== '' || candidateData.BlurbP2 !== '') {
