@@ -2,7 +2,10 @@
 @use "../styles/config";
 
 .position {
+    @include base.rounded;
+    margin-bottom: 50px;
     background-color: config.$colors-white;
+    @include base.shadow;
 }
 
 .positionTitle {

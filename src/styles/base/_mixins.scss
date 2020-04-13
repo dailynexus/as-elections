@@ -1,3 +1,5 @@
+@use "../config";
+
 @mixin flex($direction, $justify: center, $align: center, $wrap: wrap) {
     display: flex;
     flex-direction: $direction;
@@ -5,4 +7,12 @@
     align-items: $align;
     align-content: $align;
     flex-wrap: $wrap;
+}
+
+@mixin rounded {
+    border-radius: config.$sizes-rounding-radius; 
+}
+
+@mixin shadow {
+    box-shadow: config.$sizes-shadow-offset config.$sizes-shadow-offset config.$sizes-shadow-blur rgba(0, 0, 0, 0.2);
 }
