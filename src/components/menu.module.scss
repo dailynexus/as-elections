@@ -1,0 +1,21 @@
+@use "../styles/base";
+@use "../styles/config";
+
+.menu {
+    position: fixed;
+    left: 10px;
+    top: 6rem;
+    max-width: 200px;
+    padding: 15px;
+
+    @include base.flex(column, flex-start, flex-start);
+    background-color: config.$colors-white;
+
+    transition: clip-path 0.2s;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hidden {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+}

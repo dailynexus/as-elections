@@ -2,14 +2,33 @@
  * Sidebar menu.
  */
 
-import React from "react"
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-function Menu({ isMenuActive }) {
-  if (isMenuActive) {
-    return <div>Menu</div>;
-  } else {
-    return null;
-  }
+import MenuItem from "./menu-item";
+
+import styles from "./menu.module.scss";
+
+function Menu({ isMenuActive, positions, activePosition, setActivePosition }) {
+  return (
+    <div className={styles.menu + " " + (isMenuActive ? "" : styles.hidden)}>
+      {positions.map((position) => {
+        let positionID = position.replace(/ /g, '');
+        return (
+          <MenuItem positionID={positionID} position={position}
+            isActive={activePosition === positionID}
+            setActive={setActivePosition} />
+        );
+      })}
+    </div>
+  );
 }
 
-export default Menu
+Menu.propTypes = {
+  isMenuActive: PropTypes.bool.isRequired,
+  positions: PropTypes.array.isRequired,
+  activePosition: PropTypes.string,
+  setActivePosition: PropTypes.func,
+};
+
+export default Menu;

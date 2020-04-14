@@ -7,7 +7,7 @@
     width: 100%;
     border-bottom: 1px solid black;
     margin-bottom: 24px;
-    padding: 24px 32px;
+    padding: 10px 32px;
 
     @include base.flex(row, space-between);
 

@@ -1,0 +1,22 @@
+@use "../styles/config";
+
+.menuItem, .menuItem:visited {
+    width: 100%;
+
+    border-bottom: 1px solid config.$colors-foreground;
+    padding: 10px 0;
+
+    color: config.$colors-foreground;
+    font-size: 0.75rem;
+    line-height: 0.85rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menuItem.active {
+    color: config.$colors-accent;
+}
+
+.activeMarker {
+    margin-right: 0.5rem;
+}

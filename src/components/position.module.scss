@@ -22,3 +22,8 @@
 .candidates {
     @include base.flex(row, center, stretch);
 }
+
+.anchor {
+    position: relative;
+    top: -120px;
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
@@ -8,18 +8,33 @@ import Position from "../components/position"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  var electionPositions = [];
-  data.allCandidatesCsv.nodes.forEach((node) => {
-    if (electionPositions.indexOf(node.position) === -1) {
-      electionPositions.push(node.position);
-    }
-  });
+  const [electionPositions, setElectionPositions] = useState([]);
+  const [activePosition, setActivePosition] = useState("");
+
+  useEffect(() => {
+    let electionPositionsUpdated = [];
+
+    data.allCandidatesCsv.nodes.forEach((node) => {
+      if (electionPositionsUpdated.indexOf(node.position) === -1) {
+        electionPositionsUpdated.push(node.position);
+      }
+
+      // Replace newlines (carriage returns) in question responses with spaces
+      data.allQuestionsJson.nodes.forEach((questionNode) => {
+        node[questionNode.id] = node[questionNode.id].replace(/\r/g, " "); 
+      })
+    });
+
+    setElectionPositions(electionPositionsUpdated);
+    let initialPositionID = electionPositionsUpdated[0].replace(/ /g, '');
+    setActivePosition(initialPositionID);
+  }, [data]);
 
   return (
     <Layout>
       <SEO title="Home" />
 
-      <Menu />
+      <Menu positions={electionPositions} activePosition={activePosition} setActivePosition={setActivePosition} />
 
       <div className="content">
         <section className="candidates">
@@ -32,7 +47,8 @@ const IndexPage = ({ data }) => {
             });
 
             return (
-              <Position key={position} title={position} candidates={matchingCandidates} questionData={data.allQuestionsJson.nodes}/>
+              <Position key={position} title={position} candidates={matchingCandidates} questionData={data.allQuestionsJson.nodes}
+                setActive={setActivePosition} />
             );
           })}
         </section>
@@ -45,7 +61,7 @@ export default IndexPage
 
 export const query = graphql`
 query {
-  allCandidatesCsv {
+  allCandidatesCsv(filter: {Running_For: {ne: ""}}) {
     nodes {
       ...candidateFields
     }
