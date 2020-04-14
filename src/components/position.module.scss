@@ -9,8 +9,8 @@
 }
 
 .positionTitle {
-    padding-bottom: 0.5rem;
     border-bottom: 1px solid config.$colors-primary;
+    padding: 1.5rem;
 
     font-size: 2rem;
     text-align: center;
@@ -20,5 +20,5 @@
 }
 
 .candidates {
-    @include base.flex(row, center, flex-start);
+    @include base.flex(row, center, stretch);
 }

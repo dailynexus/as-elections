@@ -3,6 +3,9 @@
 
 .candidate {
     width: 300px;
+
+    @include base.flex(column, space-between, center);
+    margin-bottom: 20px;
     padding: 10px;
 
     font-family: config.$fonts-font-stack;
@@ -13,9 +16,16 @@
 }
 
 .candidateName {
+    margin-bottom: 12px;
     font-size: 1.5rem;
 }
 
 .candidateParty {
     font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.candidatePortrait {
+    margin-bottom: 8px;
 }

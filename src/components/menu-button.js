@@ -17,7 +17,6 @@ function MenuButton({ isActive, setActive }) {
   return (
     <div className={styles.menuButton} onClick={toggleActive}>
       <HamburgerSlider isActive={isActive} />
-      Menu
     </div>
   );
 }

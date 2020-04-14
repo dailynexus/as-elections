@@ -37,7 +37,7 @@ function Candidate({ candidateData, questionData }) {
       <div className={styles.candidateInfo}>
         <h3 className={styles.candidateName}>{candidateData.name}</h3>
         <h4 className={styles.candidateParty}>{candidateData.party}</h4>
-        <img className="candidate-portrait" src={candidateData.photoURL} />
+        <img className={styles.candidatePortrait} src={candidateData.photoURL} />
       </div>
 
       {hasQuestionnaireData && (

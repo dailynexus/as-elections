@@ -5,13 +5,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./button.scss";
+
 function ToggleQuestionnaire({ isOpen, setIsOpen }) {
   function toggleQuestionnaireOpen() {
     setIsOpen(!isOpen);
   }
 
   return (
-    <button onClick={toggleQuestionnaireOpen}>
+    <button className="button" onClick={toggleQuestionnaireOpen}>
       View Questionnaire
     </button>
   );
