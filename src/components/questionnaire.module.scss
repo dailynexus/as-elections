@@ -1,11 +1,22 @@
 @use '../styles/base';
 @use '../styles/config';
 
+.overlay {
+    @include base.flex(column);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
 .modal {
     position: absolute;
     max-width: 960px;
+    max-height: 95%;
 
-    inset: 30px;
     outline: none;
     border: 1px solid rgb(204, 204, 204);
     margin: 0 auto;

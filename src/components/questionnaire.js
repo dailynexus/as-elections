@@ -14,7 +14,7 @@ Modal.setAppElement('#___gatsby');
 
 function Questionnaire({ isOpen, close, data, questionData }) {
   return (
-    <Modal className={styles.modal} htmlOpenClassName="ReactModal__Html--open" isOpen={isOpen} onRequestClose={close}>
+    <Modal overlayClassName={styles.overlay} className={styles.modal} htmlOpenClassName="ReactModal__Html--open" isOpen={isOpen} onRequestClose={close}>
       <div className={styles.modalHeader}>
         <button onClick={close}>
           <FontAwesomeIcon icon="times" />
