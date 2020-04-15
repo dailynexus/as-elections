@@ -9,14 +9,15 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTimes, faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faTimes, faCaretRight, faShareSquare } from '@fortawesome/free-solid-svg-icons'
 
 import Header from "../components/header"
 
 import "./layout.css"
 import "../styles/base/_index.scss";
 
-library.add(faTimes, faCaretRight);
+library.add(faFacebook, faTwitter, faTimes, faCaretRight, faShareSquare);
 
 function Layout({ children }) {
   const [isMenuActive, setIsMenuActive] = useState(true);

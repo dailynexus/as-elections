@@ -26,7 +26,7 @@ function Position({ title, candidates, questionData, setActive }) {
   let offset = {};
   if (candidates.length > 3) {
     partialVisibility = true;
-    offset = {top: 400, bottom: 400};
+    offset = {top: 200, bottom: 200};
   }
 
   return (

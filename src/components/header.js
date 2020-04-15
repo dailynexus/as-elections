@@ -4,9 +4,11 @@
 
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useState } from "react"
+
 import Img from "gatsby-image"
 
 import MenuButton from "./menu-button"
+import SharingWidget from "./sharing-widget"
 
 import styles from "./header.module.scss"
 
@@ -36,11 +38,11 @@ function Header({ isMenuActive, setIsMenuActive} ) {
 
       <h1 className={styles.headerLogo}>
         <a href={data.site.siteMetadata.siteHomeUrl}>
-          <Img fixed={data.logoImage.childImageSharp.fixed} />
+          <Img alt={data.site.siteMetadata.title} fixed={data.logoImage.childImageSharp.fixed} />
         </a>
       </h1>
 
-      <div className={styles.sharing}></div>
+      <SharingWidget />
     </header>
   );
 }
