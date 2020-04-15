@@ -1,0 +1,96 @@
+import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
+
+import Layout from "../components/layout"
+import Question from "../components/question"
+import QuestionMenu from "../components/question-menu"
+import SEO from "../components/seo"
+
+function QuestionsPage({ data }) {
+  const [activeQuestion, setActiveQuestion] = useState("");
+
+  useEffect(() => {
+    data.allCandidatesCsv.nodes.forEach((node) => {
+      // Replace newlines (carriage returns) in question responses with spaces
+      data.allQuestionsJson.nodes.forEach((questionNode) => {
+        node[questionNode.id] = node[questionNode.id].replace(/\r/g, " "); 
+      })
+    });
+
+    setActiveQuestion(data.allQuestionsJson.nodes[0].id);
+  }, [data]);
+  
+  return (
+    <Layout>
+      <SEO title="Questions" />
+
+      <QuestionMenu questions={data.allQuestionsJson.nodes} activeQuestion={activeQuestion} />
+
+      <div className="content">
+        <section className="questions">
+          {data.allQuestionsJson.nodes.map((questionNode) => (
+            <Question key={questionNode.id} data={questionNode} candidates={data.allCandidatesCsv.nodes}
+              setActive={setActiveQuestion} />
+          ))}
+        </section>
+      </div>
+    </Layout>
+  );
+}
+
+export default QuestionsPage;
+
+export const query = graphql`
+query {
+  allCandidatesCsv(filter: {Running_For: {ne: ""}}) {
+    nodes {
+      ...candidateFields
+    }
+  }
+
+  allQuestionsJson {
+    nodes {
+      id
+      question
+    }
+  }
+
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+
+fragment candidateFields on CandidatesCsv {
+  id
+  position: Running_For
+  name: Name
+  party: Party
+  photoURL: Photo_URL
+  pronouns: Pronouns
+  interviewURL: Interview_URL
+  year: Year
+  major: Major
+  BlurbP1
+  BlurbP2
+  Q1
+  Q2
+  Q3
+  Q4
+  Q5
+  Q6
+  Q7
+  Q8
+  Q9
+  Q10
+  Q11
+  Q12
+  Q13
+  Q14
+  Q15
+  Q16
+  Q17
+  Q18
+}
+`

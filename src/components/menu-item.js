@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from "./menu-item.module.scss";
 
-function MenuItem({ positionID, position, isActive, setActive }) {
+function MenuItem({ positionID, position, isActive }) {
   return (
     <a className={styles.menuItem + " " + (isActive ? styles.active : "")} href={"#" + positionID}>
       {isActive && <FontAwesomeIcon className={styles.activeMarker} icon="caret-right" />}
