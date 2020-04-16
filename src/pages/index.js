@@ -30,8 +30,8 @@ const IndexPage = ({ data }) => {
   }, [data]);
 
   function elementsRemaining(arrays, i) {
-    for (let arr in arrays) {
-      if (arr.size > i) {
+    for (let key in arrays) {
+      if (arrays[key].length > i) {
         return true;
       }
     }
@@ -59,19 +59,18 @@ const IndexPage = ({ data }) => {
               }
             });
 
-            console.log(matchingCandidates);
-
             let matchingCandidatesArray = [];
             let i = 0;
             while (elementsRemaining(matchingCandidates, i)) {
-              matchingCandidates.forEach((party) => {
-                if (party.size > i) {
-                  matchingCandidatesArray.push(party[i]);
+              for (let party in matchingCandidates) {
+                if (matchingCandidates[party].length > i) {
+                  matchingCandidatesArray.push(matchingCandidates[party][i]);
                 }
-              });
+              }
 
               i++;
             }
+            console.log(matchingCandidatesArray);
 
             return (
               <Position key={position} title={position} candidates={matchingCandidatesArray} questionData={data.allQuestionsJson.nodes}
