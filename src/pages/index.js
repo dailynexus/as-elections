@@ -29,6 +29,16 @@ const IndexPage = ({ data }) => {
     setActivePosition(initialPositionID);
   }, [data]);
 
+  function elementsRemaining(arrays, i) {
+    for (let arr in arrays) {
+      if (arr.size > i) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -38,15 +48,33 @@ const IndexPage = ({ data }) => {
       <div className="content">
         <section className="candidates">
           {electionPositions.map((position) => {
-            let matchingCandidates = [];
+            let matchingCandidates = {};
             data.allCandidatesCsv.nodes.forEach((node) => {
               if (node.position === position) {
-                matchingCandidates.push(node);
+                if (!(node.party in matchingCandidates)) {
+                  matchingCandidates[node.party] = [];
+                }
+
+                matchingCandidates[node.party].push(node);
               }
             });
 
+            console.log(matchingCandidates);
+
+            let matchingCandidatesArray = [];
+            let i = 0;
+            while (elementsRemaining(matchingCandidates, i)) {
+              matchingCandidates.forEach((party) => {
+                if (party.size > i) {
+                  matchingCandidatesArray.push(party[i]);
+                }
+              });
+
+              i++;
+            }
+
             return (
-              <Position key={position} title={position} candidates={matchingCandidates} questionData={data.allQuestionsJson.nodes}
+              <Position key={position} title={position} candidates={matchingCandidatesArray} questionData={data.allQuestionsJson.nodes}
                 setActive={setActivePosition} />
             );
           })}
