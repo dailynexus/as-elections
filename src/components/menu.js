@@ -2,7 +2,7 @@
  * Sidebar menu.
  */
 
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import LinkItem from "./link-item";
@@ -18,7 +18,7 @@ function Menu({ isMenuActive, positions, activePosition, setActivePosition }) {
       {positions.map((position) => {
         let positionID = position.replace(/ /g, '');
         return (
-          <MenuItem positionID={positionID} position={position}
+          <MenuItem key={positionID} positionID={positionID} position={position}
             isActive={activePosition === positionID}
             setActive={setActivePosition} />
         );
@@ -28,7 +28,7 @@ function Menu({ isMenuActive, positions, activePosition, setActivePosition }) {
 }
 
 Menu.propTypes = {
-  isMenuActive: PropTypes.bool.isRequired,
+  isMenuActive: PropTypes.bool,
   positions: PropTypes.array.isRequired,
   activePosition: PropTypes.string,
   setActivePosition: PropTypes.func,

@@ -2,7 +2,7 @@
  * Sidebar menu for the questions page.
  */
 
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import LinkItem from "./link-item";

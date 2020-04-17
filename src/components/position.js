@@ -19,7 +19,6 @@ function Position({ title, candidates, questionData, setActive }) {
   function changeActive(isVisible) {
     if (isVisible) {
       setActive(positionID);
-      console.log("Setting active for " + positionID);
     }
   }
 
@@ -34,7 +33,7 @@ function Position({ title, candidates, questionData, setActive }) {
         <h2 className={styles.positionTitle}>{title}</h2>
         <div className={styles.candidates}>
           {candidates.map((candidate) => (
-            <Candidate candidateData={candidate} questionData={questionData} />
+            <Candidate key={candidate.name} candidateData={candidate} questionData={questionData} />
           ))}
         </div>
       </div>
@@ -45,7 +44,7 @@ function Position({ title, candidates, questionData, setActive }) {
 Position.propTypes = {
   title: PropTypes.string.isRequired,
   candidates: PropTypes.array.isRequired,
-  questionData: PropTypes.object.isRequired,
+  questionData: PropTypes.array.isRequired,
   setActive: PropTypes.func,
 };
 

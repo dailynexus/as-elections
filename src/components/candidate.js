@@ -2,7 +2,7 @@
  * Represents a single candidate for a position.
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import ConditionalWrapper from "./conditional-wrapper";
@@ -42,7 +42,7 @@ function Candidate({ candidateData, questionData }) {
 
   let hasQuestionnaireData = false;
   for (let question of questionData) {
-    if (candidateData[question.id] != '') {
+    if (candidateData[question.id] !== "") {
       hasQuestionnaireData = true;
       break;
     }
@@ -55,7 +55,8 @@ function Candidate({ candidateData, questionData }) {
           wrapper={(children) => <a href={candidateData.interviewURL}>{children}</a>}>
           <h3 className={styles.candidateName}>{candidateData.name}</h3>
           <h4 className={styles.candidateParty}>{candidateData.party}</h4>
-          <img className={styles.candidatePortrait} src={candidateData.photoURL} />
+          <img alt={"Portrait of " + candidateData.name}
+            className={styles.candidatePortrait} src={candidateData.photoURL} />
         </ConditionalWrapper>
       </div>
 
@@ -81,7 +82,7 @@ function Candidate({ candidateData, questionData }) {
 
 Candidate.propTypes = {
   candidateData: PropTypes.object.isRequired,
-  questionData: PropTypes.object.isRequired,
+  questionData: PropTypes.array.isRequired,
 };
 
 export default Candidate

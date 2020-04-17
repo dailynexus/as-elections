@@ -27,7 +27,7 @@ function Questionnaire({ isOpen, close, data, questionData }) {
         let questionAnswer = data[question.id];
 
         return (
-          <div className={styles.question}>
+          <div className={styles.question} key={question.id}>
             <h3>{questionPrefix} {questionText}</h3>
             <div>{questionAnswer}</div>
           </div>
@@ -41,7 +41,7 @@ Questionnaire.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
-  questionData: PropTypes.object.isRequired,
+  questionData: PropTypes.array.isRequired,
 };
 
 export default Questionnaire

@@ -16,7 +16,6 @@ function Question({ data, candidates, setActive }) {
   function changeActive(isVisible) {
     if (isVisible) {
       setActive(data.id);
-      console.log("Setting active to ", data.id);
     }
   }
 
