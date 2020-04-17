@@ -25,12 +25,14 @@ function Layout({ location, children }) {
   const childrenWithProps = React.Children.map(children, (child) => 
     React.cloneElement(child, { isMenuActive: isMenuActive })
   );
-  
-  if (location === '/') {
-    document.documentElement.style.scrollBehavior = 'smooth';
-  } else {
-    document.documentElement.style.scrollBehavior = 'auto';
-  }
+
+  useEffect(() => {
+    if (location === '/') {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    } else {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  });
 
   return (
     <>
