@@ -11,8 +11,13 @@
     }
 }
 
+.portraitWrapper {
+    flex: 1;
+}
+
 .portrait {
     flex: 1;
+    min-width: 0;
     @include base.rounded;
 }
 

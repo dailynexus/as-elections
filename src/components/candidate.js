@@ -69,10 +69,12 @@ function Candidate({ candidateData, questionData }) {
         </>
       )}
 
-      <div className={styles.blurb}>
-        {candidateBlurbP1}
-        {candidateBlurbP2}
-      </div>
+      {(candidateBlurbP1 || candidateBlurbP2) && (
+        <div className={styles.blurb}>
+          {candidateBlurbP1}
+          {candidateBlurbP2}
+        </div>
+      )}
     </div>
   );
 };

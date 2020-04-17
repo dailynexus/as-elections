@@ -19,15 +19,12 @@ function Position({ title, candidates, questionData, setActive }) {
   function changeActive(isVisible) {
     if (isVisible) {
       setActive(positionID);
+      console.log("Setting active for " + positionID);
     }
   }
 
-  let partialVisibility = false;
-  let offset = {};
-  if (candidates.length > 3) {
-    partialVisibility = true;
-    offset = {top: 200, bottom: 200};
-  }
+  let partialVisibility = true;
+  let offset = {top: 200, bottom: 200};
 
   return (
     <VisibilitySensor onChange={changeActive} partialVisibility={partialVisibility} intervalCheck={false}

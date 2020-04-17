@@ -10,7 +10,9 @@ import styles from "./question-candidate.module.scss";
 function QuestionCandidate({ candidateData, questionID }) {
   return (
     <div className={styles.candidate}>
-      <img className={styles.portrait} alt={"Portrait of " + candidateData.name} src={candidateData.photoURL} />
+      <div className={styles.portraitWrapper}>
+        <img className={styles.portrait} alt={"Portrait of " + candidateData.name} src={candidateData.photoURL} />
+      </div>
       <div className={styles.text}>
         <div className={styles.candidateInfo}>
           <h3 className={styles.name}>{candidateData.name}</h3>
