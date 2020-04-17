@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
+import ConditionalWrapper from "./conditional-wrapper";
 import Questionnaire from "./questionnaire";
 import ToggleQuestionnaire from "./toggle-questionnaire";
 
@@ -30,7 +31,11 @@ function Candidate({ candidateData, questionData }) {
       let candidateBlurbOpener = <strong>{candidateData.BlurbP2.substring(0, 16)}</strong>;
       candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(16)}</p>;
     } else {
-      let candidateBlurbOpener = <strong class={styles.endorsement}>{candidateData.BlurbP2.substring(0, 12)}</strong>;
+      let candidateBlurbOpener = (
+        <a className={styles.endorsement} href={candidateData.interviewURL}>
+          <strong>{candidateData.BlurbP2.substring(0, 12)}</strong>
+        </a>
+      );
       candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(12)}</p>;
     }
   }
@@ -46,9 +51,12 @@ function Candidate({ candidateData, questionData }) {
   return (
     <div className={styles.candidate}>
       <div className={styles.candidateInfo}>
-        <h3 className={styles.candidateName}>{candidateData.name}</h3>
-        <h4 className={styles.candidateParty}>{candidateData.party}</h4>
-        <img className={styles.candidatePortrait} src={candidateData.photoURL} />
+        <ConditionalWrapper condition={candidateData.interviewURL}
+          wrapper={(children) => <a href={candidateData.interviewURL}>{children}</a>}>
+          <h3 className={styles.candidateName}>{candidateData.name}</h3>
+          <h4 className={styles.candidateParty}>{candidateData.party}</h4>
+          <img className={styles.candidatePortrait} src={candidateData.photoURL} />
+        </ConditionalWrapper>
       </div>
 
       {hasQuestionnaireData && (

@@ -13,6 +13,10 @@
 
 .candidateInfo {
     text-align: center;
+
+    a, a:visited {
+        color: config.$colors-foreground;
+    }
 }
 
 .candidateName {
@@ -39,7 +43,8 @@
         font-weight: bold;
     }
 
-    .endorsement {
-        text-decoration: underline;
+    .endorsement, .endorsement:visited {
+        color: config.$colors-foreground;
+        text-decoration-color: config.$colors-foreground;
     }
 }
