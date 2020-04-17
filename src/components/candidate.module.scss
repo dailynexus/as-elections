@@ -28,4 +28,18 @@
 
 .candidatePortrait {
     margin-bottom: 8px;
+    @include base.rounded;
+}
+
+.blurb {
+    flex: 1;
+    @include base.flex(column, space-between, space-between);
+
+    strong {
+        font-weight: bold;
+    }
+
+    .endorsement {
+        text-decoration: underline;
+    }
 }

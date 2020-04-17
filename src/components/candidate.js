@@ -19,9 +19,20 @@ function Candidate({ candidateData, questionData }) {
 
   let candidateBlurbP1;
   let candidateBlurbP2;
-  if (candidateData.BlurbP1 !== '' || candidateData.BlurbP2 !== '') {
-    if (candidateData.BlurbP1 !== '') candidateBlurbP1 = <p>{candidateData.BlurbP1}</p>;
-    if (candidateData.BlurbP2 !== '') candidateBlurbP2 = <p>{candidateData.BlurbP2}</p>;
+
+  // Hacky solution to bold opening parts of each blurb paragraph
+  if (candidateData.BlurbP1 !== '') {
+    let candidateBlurbOpener = <strong>{candidateData.BlurbP1.substring(0, 16)}</strong>;
+    candidateBlurbP1 = <p>{candidateBlurbOpener} {candidateData.BlurbP1.substring(16)}</p>;
+  }
+  if (candidateData.BlurbP2 !== '') {
+    if (candidateData.BlurbP2.substring(0, 3) === "Non") {
+      let candidateBlurbOpener = <strong>{candidateData.BlurbP2.substring(0, 16)}</strong>;
+      candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(16)}</p>;
+    } else {
+      let candidateBlurbOpener = <strong class={styles.endorsement}>{candidateData.BlurbP2.substring(0, 12)}</strong>;
+      candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(12)}</p>;
+    }
   }
 
   let hasQuestionnaireData = false;
@@ -50,8 +61,10 @@ function Candidate({ candidateData, questionData }) {
         </>
       )}
 
-      {candidateBlurbP1}
-      {candidateBlurbP2}
+      <div className={styles.blurb}>
+        {candidateBlurbP1}
+        {candidateBlurbP2}
+      </div>
     </div>
   );
 };
