@@ -1,0 +1,25 @@
+@use "../styles/base";
+@use "../styles/config";
+
+.anchor {
+    position: relative;
+    top: -120px;
+}
+
+.question {
+    margin-bottom: 50px;
+
+    @include base.rounded;
+    background-color: config.$colors-white;
+}
+
+.questionTitle {
+    border-bottom: 1px solid config.$colors-primary;
+    margin-bottom: 0;
+    padding: 1.5rem;
+
+    font-size: 2rem;
+    text-align: center;
+
+    color: config.$colors-primary;
+}

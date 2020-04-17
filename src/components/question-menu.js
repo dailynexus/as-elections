@@ -5,17 +5,25 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import LinkItem from "./link-item";
 import MenuItem from "./menu-item";
 
 import styles from "./menu.module.scss";
 
 function QuestionMenu({ isMenuActive, questions, activeQuestion }) {
+
   return (
     <div className={styles.menu + " " + (isMenuActive ? "" : styles.hidden)}>
-      {questions.map((questionNode) => (
-        <MenuItem positionID={questionNode.id} position={questionNode.question}
+      <LinkItem url={"/"} text={"Return to Main Page"} icon={"home"} />
+
+      {questions.map((questionNode) => {
+        let itemText = questionNode.id.substring(1) + ". " + questionNode.question;
+
+        return (
+          <MenuItem question={true} positionID={questionNode.id} position={itemText}
           isActive={activeQuestion === questionNode.id} />
-      ))}
+        );
+      })}
     </div>
   );
 }

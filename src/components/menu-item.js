@@ -9,9 +9,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from "./menu-item.module.scss";
 
-function MenuItem({ positionID, position, isActive }) {
+function MenuItem({ question, positionID, position, isActive }) {
+  let className = styles.menuItem;
+  if (question) {
+    className += " " + styles.question;
+  }
+  if (isActive) {
+    className += " " + styles.active;
+  }
+
   return (
-    <a className={styles.menuItem + " " + (isActive ? styles.active : "")} href={"#" + positionID}>
+    <a className={className} href={"#" + positionID}>
       {isActive && <FontAwesomeIcon className={styles.activeMarker} icon="caret-right" />}
       {position}
     </a>
@@ -19,6 +27,7 @@ function MenuItem({ positionID, position, isActive }) {
 }
 
 MenuItem.propTypes = {
+  question: PropTypes.bool,
   positionID: PropTypes.string,
   position: PropTypes.string,
   isActive: PropTypes.bool,

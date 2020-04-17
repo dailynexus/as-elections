@@ -70,7 +70,6 @@ const IndexPage = ({ data }) => {
 
               i++;
             }
-            console.log(matchingCandidatesArray);
 
             return (
               <Position key={position} title={position} candidates={matchingCandidatesArray} questionData={data.allQuestionsJson.nodes}

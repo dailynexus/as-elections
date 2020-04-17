@@ -11,6 +11,20 @@
     line-height: 0.85rem;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color 0.25s;
+
+    &.linkItem {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+    &:hover {
+        color: config.$colors-accent;
+    }
+}
+
+.menuItem.question {
+    text-transform: none;
 }
 
 .menuItem.active {

@@ -1,0 +1,36 @@
+@use "../styles/base";
+@use "../styles/config";
+
+.candidate {
+    @include base.flex(row, space-between, flex-start);
+    padding: 40px;
+    border-bottom: 1px solid config.$colors-foreground;
+}
+
+.portrait {
+    flex: 1;
+}
+
+.text {
+    flex: 4;
+    margin-left: 15px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.candidateInfo {
+    margin-bottom: 1rem;
+
+    .name {
+        margin-bottom: 0.5rem;
+    }
+
+    .extraInfo {
+        margin-bottom: 0.25rem;
+        color: lighten(config.$colors-foreground, 20%);
+        font-weight: normal;
+        font-style: italic;
+    }
+}

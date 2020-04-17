@@ -18,7 +18,6 @@ function Header({ isMenuActive, setIsMenuActive} ) {
       site {
         siteMetadata {
           title
-          siteHomeUrl
         }
       }
 
@@ -37,7 +36,7 @@ function Header({ isMenuActive, setIsMenuActive} ) {
       <MenuButton isActive={isMenuActive} setActive={setIsMenuActive} />
 
       <h1 className={styles.headerLogo}>
-        <a href={data.site.siteMetadata.siteHomeUrl}>
+        <a href="/">
           <Img alt={data.site.siteMetadata.title} fixed={data.logoImage.childImageSharp.fixed} />
         </a>
       </h1>
