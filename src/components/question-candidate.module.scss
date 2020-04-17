@@ -5,6 +5,10 @@
     @include base.flex(row, space-between, flex-start);
     padding: 40px;
     border-bottom: 1px solid config.$colors-foreground;
+
+    @media screen and (max-width: 600px) {
+        @include base.flex(column, space-between, center);
+    }
 }
 
 .portrait {
