@@ -71,7 +71,7 @@ function QuestionsPage({ data }) {
   }, [data]);
   
   return (
-    <Layout>
+    <Layout location="questions">
       <SEO title="Questions" />
 
       <QuestionMenu questions={data.allQuestionsJson.nodes} activeQuestion={activeQuestion} />

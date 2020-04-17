@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout location="/">
       <SEO title="Home" />
 
       <Menu positions={electionPositions} activePosition={activePosition} setActivePosition={setActivePosition} />

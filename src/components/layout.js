@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,12 +19,18 @@ import "../styles/base/_index.scss";
 
 library.add(faFacebook, faTwitter, faHome, faTimes, faQuestionCircle, faCaretRight, faShareSquare);
 
-function Layout({ children }) {
+function Layout({ location, children }) {
   const [isMenuActive, setIsMenuActive] = useState(true);
 
   const childrenWithProps = React.Children.map(children, (child) => 
     React.cloneElement(child, { isMenuActive: isMenuActive })
   );
+  
+  if (location === '/') {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  } else {
+    document.documentElement.style.scrollBehavior = 'auto';
+  }
 
   return (
     <>
@@ -46,6 +52,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
+  location: PropTypes.string,
   children: PropTypes.node.isRequired,
 }
 
