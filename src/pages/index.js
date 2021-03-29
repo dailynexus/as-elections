@@ -48,6 +48,8 @@ const IndexPage = ({ data }) => {
       <div className="content">
         <section className="candidates">
           {electionPositions.map((position) => {
+            // Construct a map of arrays for all candidates running for this position, with each array
+            // containing the candidates running under a given party
             let matchingCandidates = {};
             data.allCandidatesCsv.nodes.forEach((node) => {
               if (node.position === position) {
@@ -59,6 +61,8 @@ const IndexPage = ({ data }) => {
               }
             });
 
+            // Flatten the previously constructed map of arrays into a single array of candidates,
+            // alternating between parties
             let matchingCandidatesArray = [];
             let i = 0;
             while (elementsRemaining(matchingCandidates, i)) {
