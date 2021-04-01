@@ -142,5 +142,6 @@ fragment candidateFields on CandidatesCsv {
   Q16
   Q17
   Q18
+  Q19
 }
 `

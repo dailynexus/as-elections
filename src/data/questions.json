@@ -1,7 +1,7 @@
 [
   {
     "id": "Q1",
-    "question": "Why are you running to be a senator with the 71st senate?"
+    "question": "Why are you running to be a senator with the 73rd senate?"
   },
   {
     "id": "Q2",
@@ -21,7 +21,7 @@
   },
   {
     "id": "Q6",
-    "question": "How will you make yourself available to your constituents during your term if the shift to online courses continues through summer and fall quarter?"
+    "question": "How will you make yourself available to your constituents during your term if the remote instruction continues in the 2021-2022 school year?"
   },
   {
     "id": "Q7",
@@ -33,7 +33,7 @@
   },
   {
     "id": "Q9",
-    "question": "How would you assess the work of the 70th (2019-2020) A.S. Senate in addressing the needs of the student body?"
+    "question": "How would you assess the work of the 72nd A.S. Senate in addressing the needs of the student body?"
   },
   {
     "id": "Q10",
@@ -49,15 +49,15 @@
   },
   {
     "id": "Q13",
-    "question": "During Fall Quarter 2019, there were multiple reports of sexual assault occurring on fraternity property. In the following weeks, students criticized the university for its slow response to the reports and for failing to address their concerns. Do you believe the university could have handled the situation better? Please explain."
+    "question": "During the COVID-19 pandemic, multiple allegations were brought to the university and/or shared on social media concerning fraternities and sororities hosting large gatherings and breaking social distancing protocols. Do you believe that the response to partying in Isla Vista could have been handled better by the university, the county and/or Greek life, and what punishment do you think culpable individuals and organizations should face?"
   },
   {
     "id": "Q14",
-    "question": "Do you believe that Title IX is an adequate system to address sexual assault on UC campuses? Please explain."
+    "question": "Are you familiar with the university’s Title IX office and its functions? What do you believe the university can do more to support survivors of sexual assault?"
   },
   {
     "id": "Q15",
-    "question": "Do you believe UCSB is effectively serving historically underrepresented groups, including members of the Black, Latinx, LGBTQ+ community and others? Please explain."
+    "question": "Do you believe UCSB is effectively serving historically underrepresented groups, including members of the Black, Latinx, Indigenous, LGBTQ+ community and others?"
   },
   {
     "id": "Q16",
@@ -69,6 +69,10 @@
   },
   {
     "id": "Q18",
-    "question": "UC President Janet Napolitano is stepping down in August. As the search for her replacement is ongoing, what do you see as the top priorities for the next UC President?"
+    "question": "In your role as a senator, how would you help or aid in the transition back to in-person instruction and in-person activity in Isla Vista?"
+  },
+  {
+    "id": "Q19",
+    "question": "In what ways do you believe the university succeeded and failed in handling the coronavirus pandemic and remote instruction?"
   }
 ]
