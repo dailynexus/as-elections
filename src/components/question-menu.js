@@ -8,12 +8,12 @@ import PropTypes from "prop-types";
 import LinkItem from "./link-item";
 import MenuItem from "./menu-item";
 
-import styles from "./menu.module.scss";
+import {menu, hidden} from "./menu.module.scss";
 
 function QuestionMenu({ isMenuActive, questions, activeQuestion }) {
 
   return (
-    <div className={styles.menu + " " + (isMenuActive ? "" : styles.hidden)}>
+    <div className={menu + " " + (isMenuActive ? "" : hidden)}>
       <LinkItem url={"/"} text={"Return to Main Page"} icon={"home"} />
 
       {questions.map((questionNode) => {

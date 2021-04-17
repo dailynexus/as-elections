@@ -7,7 +7,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "./sharing-widget.module.scss";
+import {sharing, shareText, faShareSquare, shareButtons} from "./sharing-widget.module.scss";
 
 function SharingWidget() {
   const data = useStaticQuery(graphql`
@@ -24,13 +24,13 @@ function SharingWidget() {
   const twitterURL = "https://twitter.com/intent/tweet?text=";
 
   return (
-    <div className={styles.sharing}>
-      <div className={styles.shareText}>
-        <FontAwesomeIcon className={styles.faShareSquare} icon="share-square" />
+    <div className={sharing}>
+      <div className={shareText}>
+        <FontAwesomeIcon className={faShareSquare} icon="share-square" />
         Share
       </div>
 
-      <div className={styles.shareButtons}>
+      <div className={shareButtons}>
         <a href={facebookURL + data.site.siteMetadata.siteUrl}>
           <FontAwesomeIcon icon={["fab", "facebook"]} />
         </a>

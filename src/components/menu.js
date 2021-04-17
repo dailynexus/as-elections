@@ -8,11 +8,11 @@ import PropTypes from "prop-types";
 import LinkItem from "./link-item";
 import MenuItem from "./menu-item";
 
-import styles from "./menu.module.scss";
+import {menu, hidden} from "./menu.module.scss";
 
 function Menu({ isMenuActive, positions, activePosition, setActivePosition }) {
   return (
-    <div className={styles.menu + " " + (isMenuActive ? "" : styles.hidden)}>
+    <div className={menu + " " + (isMenuActive ? "" : hidden)}>
       <LinkItem url={"/questions"} text={"View Responses by Question"} icon={"question-circle"} />
 
       {positions.map((position) => {

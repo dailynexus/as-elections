@@ -11,7 +11,7 @@ import VisibilitySensor from "react-visibility-sensor";
 
 import Candidate from "./candidate";
 
-import styles from "./position.module.scss";
+import {position, positionTitle, candidates as candidatesStyle, anchor} from "./position.module.scss";
 
 function Position({ title, candidates, questionData, setActive }) {
   let positionID = title.replace(/ /g, '');
@@ -28,10 +28,10 @@ function Position({ title, candidates, questionData, setActive }) {
   return (
     <VisibilitySensor onChange={changeActive} partialVisibility={partialVisibility} intervalCheck={false}
       scrollCheck={true} scrollDelay={0} offset={offset}>
-      <div className={styles.position}>
-        <span id={positionID} className={styles.anchor} />
-        <h2 className={styles.positionTitle}>{title}</h2>
-        <div className={styles.candidates}>
+      <div className={position}>
+        <span id={positionID} className={anchor} />
+        <h2 className={positionTitle}>{title}</h2>
+        <div className={candidatesStyle}>
           {candidates.map((candidate) => (
             <Candidate key={candidate.name} candidateData={candidate} questionData={questionData} />
           ))}

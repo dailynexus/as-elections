@@ -7,20 +7,20 @@ import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import styles from "./menu-item.module.scss";
+import {menuItem, question as questionStyle, active, activeMarker} from "./menu-item.module.scss";
 
 function MenuItem({ question, positionID, position, isActive }) {
-  let className = styles.menuItem;
+  let className = menuItem;
   if (question) {
-    className += " " + styles.question;
+    className += " " + questionStyle;
   }
   if (isActive) {
-    className += " " + styles.active;
+    className += " " + active;
   }
 
   return (
     <a className={className} href={"#" + positionID}>
-      {isActive && <FontAwesomeIcon className={styles.activeMarker} icon="caret-right" />}
+      {isActive && <FontAwesomeIcon className={activeMarker} icon="caret-right" />}
       {position}
     </a>
   );

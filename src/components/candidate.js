@@ -9,7 +9,8 @@ import ConditionalWrapper from "./conditional-wrapper";
 import Questionnaire from "./questionnaire";
 import ToggleQuestionnaire from "./toggle-questionnaire";
 
-import styles from "./candidate.module.scss";
+import {candidate, candidateInfo, candidateName, candidateParty, candidatePortrait, blurb, endorsement}
+  from "./candidate.module.scss";
 
 function Candidate({ candidateData, questionData }) {
   const [isQuestionnaireOpen, setIsQuestionnaireOpen] = useState(false);
@@ -32,7 +33,7 @@ function Candidate({ candidateData, questionData }) {
       candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(16)}</p>;
     } else {
       let candidateBlurbOpener = (
-        <a className={styles.endorsement} href={candidateData.interviewURL}>
+        <a className={endorsement} href={candidateData.interviewURL}>
           <strong>{candidateData.BlurbP2.substring(0, 12)}</strong>
         </a>
       );
@@ -49,14 +50,14 @@ function Candidate({ candidateData, questionData }) {
   }
 
   return (
-    <div className={styles.candidate}>
-      <div className={styles.candidateInfo}>
+    <div className={candidate}>
+      <div className={candidateInfo}>
         <ConditionalWrapper condition={candidateData.interviewURL}
           wrapper={(children) => <a href={candidateData.interviewURL}>{children}</a>}>
-          <h3 className={styles.candidateName}>{candidateData.name}</h3>
-          <h4 className={styles.candidateParty}>{candidateData.party}</h4>
+          <h3 className={candidateName}>{candidateData.name}</h3>
+          <h4 className={candidateParty}>{candidateData.party}</h4>
           <img alt={"Portrait of " + candidateData.name}
-            className={styles.candidatePortrait} src={candidateData.photoURL} />
+            className={candidatePortrait} src={candidateData.photoURL} />
         </ConditionalWrapper>
       </div>
 
@@ -71,7 +72,7 @@ function Candidate({ candidateData, questionData }) {
       )}
 
       {(candidateBlurbP1 || candidateBlurbP2) && (
-        <div className={styles.blurb}>
+        <div className={blurb}>
           {candidateBlurbP1}
           {candidateBlurbP2}
         </div>

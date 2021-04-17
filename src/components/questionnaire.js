@@ -8,14 +8,14 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from 'react-modal';
 
-import styles from "./questionnaire.module.scss";
+import {overlay, modal, modalHeader, question as questionStyle} from "./questionnaire.module.scss";
 
 Modal.setAppElement('#___gatsby');
 
 function Questionnaire({ isOpen, close, data, questionData }) {
   return (
-    <Modal overlayClassName={styles.overlay} className={styles.modal} htmlOpenClassName="ReactModal__Html--open" isOpen={isOpen} onRequestClose={close}>
-      <div className={styles.modalHeader}>
+    <Modal overlayClassName={overlay} className={modal} htmlOpenClassName="ReactModal__Html--open" isOpen={isOpen} onRequestClose={close}>
+      <div className={modalHeader}>
         <button onClick={close}>
           <FontAwesomeIcon icon="times" />
         </button>
@@ -27,7 +27,7 @@ function Questionnaire({ isOpen, close, data, questionData }) {
         let questionAnswer = data[question.id];
 
         return (
-          <div className={styles.question} key={question.id}>
+          <div className={questionStyle} key={question.id}>
             <h3>{questionPrefix} {questionText}</h3>
             <div>{questionAnswer}</div>
           </div>

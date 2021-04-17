@@ -10,7 +10,7 @@ import Img from "gatsby-image"
 import MenuButton from "./menu-button"
 import SharingWidget from "./sharing-widget"
 
-import styles from "./header.module.scss"
+import {header, faBars, headerLogo} from "./header.module.scss";
 
 function Header({ isMenuActive, setIsMenuActive} ) {
   const data = useStaticQuery(graphql`
@@ -32,10 +32,10 @@ function Header({ isMenuActive, setIsMenuActive} ) {
   `);
 
   return (
-    <header className={styles.header}>
+    <header className={header}>
       <MenuButton isActive={isMenuActive} setActive={setIsMenuActive} />
 
-      <h1 className={styles.headerLogo}>
+      <h1 className={headerLogo}>
         <a href="/">
           <Img alt={data.site.siteMetadata.title} fixed={data.logoImage.childImageSharp.fixed} />
         </a>

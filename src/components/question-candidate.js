@@ -5,19 +5,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./question-candidate.module.scss";
+import {candidate, portraitWrapper, portrait, text, candidateInfo, name, extraInfo} 
+  from "./question-candidate.module.scss";
 
 function QuestionCandidate({ candidateData, questionID }) {
   return (
-    <div className={styles.candidate}>
-      <div className={styles.portraitWrapper}>
-        <img className={styles.portrait} alt={"Portrait of " + candidateData.name} src={candidateData.photoURL} />
+    <div className={candidate}>
+      <div className={portraitWrapper}>
+        <img className={portrait} alt={"Portrait of " + candidateData.name} src={candidateData.photoURL} />
       </div>
-      <div className={styles.text}>
-        <div className={styles.candidateInfo}>
-          <h3 className={styles.name}>{candidateData.name}</h3>
-          <h4 className={styles.extraInfo}>{candidateData.position}</h4>
-          <h4 className={styles.extraInfo}>{candidateData.party}</h4>
+      <div className={text}>
+        <div className={candidateInfo}>
+          <h3 className={name}>{candidateData.name}</h3>
+          <h4 className={extraInfo}>{candidateData.position}</h4>
+          <h4 className={extraInfo}>{candidateData.party}</h4>
         </div>
 
         <p>
