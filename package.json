@@ -1,7 +1,7 @@
 {
-  "name": "2020_as_interactive",
+  "name": "as_elections",
   "private": true,
-  "description": "Site for the 2020 A.S. Elections Interactive.",
+  "description": "Site for info about UCSB A.S. Elections.",
   "version": "0.1.0",
   "author": "Web Developer <web@dailynexus.com>",
   "dependencies": {
@@ -40,7 +40,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
