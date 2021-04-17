@@ -6,7 +6,7 @@ module.exports = {
         siteUrl: `http://dailynexus.com/aselections2021`,
         siteHomeUrl: `http://dailynexus.com`,
     },
-    pathPrefix: `/aselections2021`,
+    pathPrefix: `/aselections`,
     plugins: [
         `gatsby-plugin-react-helmet`,
         {
