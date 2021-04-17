@@ -12,6 +12,7 @@
 }
 
 .candidateInfo {
+    width: 100%;
     text-align: center;
 
     a, a:visited {
@@ -30,7 +31,8 @@
     font-style: italic;
 }
 
-.candidatePortrait {
+img.candidatePortrait {
+    width: 100%;
     margin-bottom: 8px;
     @include base.rounded;
 }
