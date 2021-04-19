@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `A.S. Elections`,
+        title: `A.S. Elections Guide`,
         description: `Explore the policies of the candidates in the Associated Students elections.`,
         author: `web@dailynexus.com`,
         siteUrl: `http://dailynexus.com/aselections`,
