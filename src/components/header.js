@@ -29,7 +29,7 @@ function Header({ isMenuActive, setIsMenuActive} ) {
 
       <h1 className={headerLogo}>
         <a href="/">
-          <StaticImage className={logoImage} src="../images/daily-nexus-logo.png" width="250"
+          <StaticImage className={logoImage} src="../images/daily-nexus-logo.png" width={250}
             alt={data.site.siteMetadata.title} />
         </a>
       </h1>

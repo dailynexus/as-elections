@@ -14,8 +14,9 @@
 
 .modal {
     position: absolute;
+    top: 150px;
     max-width: 960px;
-    max-height: 95%;
+    max-height: calc(100% - 200px);
 
     outline: none;
     border: 1px solid rgb(204, 204, 204);
