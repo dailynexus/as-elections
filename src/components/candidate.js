@@ -4,6 +4,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import ConditionalWrapper from "./conditional-wrapper";
 import Questionnaire from "./questionnaire";
@@ -56,8 +57,9 @@ function Candidate({ candidateData, questionData }) {
           wrapper={(children) => <a href={candidateData.interviewURL}>{children}</a>}>
           <h3 className={candidateName}>{candidateData.name}</h3>
           <h4 className={candidateParty}>{candidateData.party}</h4>
-          <img alt={"Portrait of " + candidateData.name}
-            className={candidatePortrait} src={candidateData.photoURL} />
+          <GatsbyImage alt={"Portrait of " + candidateData.name}
+            className={candidatePortrait}
+            image={getImage(candidateData.photo)} />
         </ConditionalWrapper>
       </div>
 

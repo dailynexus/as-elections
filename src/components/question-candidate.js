@@ -5,6 +5,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import {candidate, portraitWrapper, portrait, text, candidateInfo, name, extraInfo} 
   from "./question-candidate.module.scss";
 
@@ -12,7 +14,9 @@ function QuestionCandidate({ candidateData, questionID }) {
   return (
     <div className={candidate}>
       <div className={portraitWrapper}>
-        <img className={portrait} alt={"Portrait of " + candidateData.name} src={candidateData.photoURL} />
+        <GatsbyImage alt={"Portrait of " + candidateData.name}
+          className={portrait}
+          image={getImage(candidateData.photo)} />
       </div>
       <div className={text}>
         <div className={candidateInfo}>

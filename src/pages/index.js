@@ -115,6 +115,13 @@ fragment candidateFields on CandidatesCsv {
   position: Running_For
   name: Name
   party: Party
+  photo: Photo {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+      )
+    }
+  } 
   photoURL: Photo_URL
   pronouns: Pronouns
   interviewURL: Interview_URL
