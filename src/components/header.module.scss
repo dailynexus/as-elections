@@ -9,11 +9,15 @@
     width: 100%;
     border-bottom: 1px solid black;
     margin-bottom: 24px;
-    padding: 10px 32px;
+    padding: 10px;
 
     @include base.flex(row, space-between);
 
     background-color: white;
+
+    @include mixins.tablet {
+        padding: 10px 30px;
+    }
 }
 
 .faBars {
@@ -24,9 +28,16 @@
     margin: 0;
     color: black;
     text-decoration: none;
-    display: none;
+}
+
+.logoImage {
+    width: 150px;
 
     @include mixins.tablet {
-        display: block;
+        width: 200px;
+    }
+
+    @include mixins.laptop {
+        width: 250px;
     }
 }

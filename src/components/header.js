@@ -5,12 +5,12 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import MenuButton from "./menu-button"
 import SharingWidget from "./sharing-widget"
 
-import {header, faBars, headerLogo} from "./header.module.scss";
+import {header, faBars, headerLogo, logoImage} from "./header.module.scss";
 
 function Header({ isMenuActive, setIsMenuActive} ) {
   const data = useStaticQuery(graphql`
@@ -18,14 +18,6 @@ function Header({ isMenuActive, setIsMenuActive} ) {
       site {
         siteMetadata {
           title
-        }
-      }
-
-      logoImage: file(relativePath: {eq: "daily-nexus-logo.png"}) {
-        childImageSharp {
-          fixed(width: 210, height: 42) {
-            ...GatsbyImageSharpFixed
-          }
         }
       }
     }
@@ -37,7 +29,8 @@ function Header({ isMenuActive, setIsMenuActive} ) {
 
       <h1 className={headerLogo}>
         <a href="/">
-          <Img alt={data.site.siteMetadata.title} fixed={data.logoImage.childImageSharp.fixed} />
+          <StaticImage className={logoImage} src="../images/daily-nexus-logo.png" width="250"
+            alt={data.site.siteMetadata.title} />
         </a>
       </h1>
 
