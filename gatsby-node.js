@@ -24,7 +24,7 @@ exports.onCreateNode = async ({
     createNodeId,
 }) => {
     // Call createRemoteFileNode on CandidatesCsv nodes with photo URLs
-    if (node.internal.type === "CandidatesCsv" && node['Photo URL'] !== null) {
+    if (node.internal.type === "CandidatesCsv" && node['Photo URL'] !== null && node['Photo URL'] !== '') {
         let fileNode = await createRemoteFileNode({
             url: node['Photo URL'],
             parentNodeId: node.id,
