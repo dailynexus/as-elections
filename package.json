@@ -27,7 +27,8 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.11.2",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "react-web-share": "^1.0.18"
   },
   "devDependencies": {
     "prettier": "^1.19.1",

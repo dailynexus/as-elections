@@ -1,4 +1,5 @@
 @use "../styles/base";
+@use "../styles/base/mixins";
 @use "../styles/config";
 
 .header {
@@ -23,8 +24,5 @@
     margin: 0;
     color: black;
     text-decoration: none;
-
-    @media screen and (max-width: 450px) {
-        display: none;
-    }
+    display: block;
 }

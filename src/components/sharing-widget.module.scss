@@ -1,52 +1,26 @@
+@use "../styles/base/mixins";
 @use "../styles/config";
 
 .sharing {
-    position: relative;
-    font-size: 2rem;
-
+    cursor: pointer;
+    color: config.$colors-foreground;
+    transition: color 0.25s;
     &:hover {
-        .shareText {
-            top: -100px;
-        }
-
-        .shareButtons {
-            opacity: 1;
-        }
-    }
-
-    a {
-        color: config.$colors-foreground;
-        margin-right: 1rem;
-        
-        transition: color 0.25s;
-
-        &:hover {
-            color: config.$colors-accent;
-        }
+        color: config.$colors-accent;
     }
 }
 
 .shareText {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 30px;
-    margin: auto;
+    display: none;
+    margin-left: 0.5rem;
 
-    font-size: 1rem;
-    text-transform: uppercase;
-    transition: top 0.2s ease-out;
-
-    .faShareSquare {
-        margin-right: 5px;
+    @include mixins.tablet {
+        display: inline;
     }
 }
 
-.shareButtons {
-    position: relative;
-    top: 0;
-    width: 100%;
-
-    opacity: 0;
-    transition: opacity 0.5s;
+:global(.web-share-fade) {
+    @include mixins.laptop {
+        justify-content: center !important;
+    }
 }
