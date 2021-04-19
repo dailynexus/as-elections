@@ -8,7 +8,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RWebShare } from "react-web-share";
 
-import {sharing, shareText} from "./sharing-widget.module.scss";
+import {sharing, shareIcon, shareText} from "./sharing-widget.module.scss";
 
 function SharingWidget() {
   const data = useStaticQuery(graphql`
@@ -29,7 +29,7 @@ function SharingWidget() {
         url: data.site.siteMetadata.siteUrl
       }}>
       <div className={sharing}>
-        <FontAwesomeIcon icon="share-square" />
+        <FontAwesomeIcon className={shareIcon} icon="share-square" />
         <div className={shareText}>
           Share
         </div>

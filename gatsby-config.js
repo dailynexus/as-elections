@@ -3,7 +3,7 @@ module.exports = {
         title: `A.S. Elections`,
         description: `Explore the policies of the candidates in the Associated Students elections.`,
         author: `web@dailynexus.com`,
-        siteUrl: `http://dailynexus.com/aselections2021`,
+        siteUrl: `http://dailynexus.com/aselections`,
         siteHomeUrl: `http://dailynexus.com`,
     },
     pathPrefix: `/aselections`,
