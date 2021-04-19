@@ -33,6 +33,7 @@ module.exports = {
                 useResolveUrlLoader: true,
             },
         },
+        `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-manifest`,
