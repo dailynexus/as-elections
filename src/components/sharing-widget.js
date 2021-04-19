@@ -25,7 +25,7 @@ function SharingWidget() {
     <RWebShare
       data={{
         title: "Share our A.S. Elections Guide",
-        text: "A.S. Elections Guide",
+        text: "",
         url: data.site.siteMetadata.siteUrl
       }}>
       <div className={sharing}>
