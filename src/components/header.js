@@ -30,6 +30,7 @@ function Header({ isMenuActive, setIsMenuActive} ) {
       <h1 className={headerLogo}>
         <a href="/">
           <StaticImage className={logoImage} src="../images/daily-nexus-logo.png" width={250}
+            loading="eager" placeholder="tracedSVG"
             alt={data.site.siteMetadata.title} />
         </a>
       </h1>

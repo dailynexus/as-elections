@@ -6,9 +6,14 @@ import { useStaticQuery, graphql } from "gatsby";
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import { RWebShare } from "react-web-share";
 
 import {sharing, shareIcon, shareText} from "./sharing-widget.module.scss";
+
+// Fix FOUC from Font Awesome
+config.autoAddCss = false
 
 function SharingWidget() {
   const data = useStaticQuery(graphql`
