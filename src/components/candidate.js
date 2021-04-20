@@ -34,7 +34,7 @@ function Candidate({ candidateData, questionData }) {
       candidateBlurbP2 = <p>{candidateBlurbOpener} {candidateData.BlurbP2.substring(16)}</p>;
     } else {
       let candidateBlurbOpener = (
-        <a className={endorsement} href={candidateData.interviewURL}>
+        <a target="_blank" className={endorsement} href={candidateData.interviewURL}>
           <strong>{candidateData.BlurbP2.substring(0, 12)}</strong>
         </a>
       );
@@ -54,7 +54,7 @@ function Candidate({ candidateData, questionData }) {
     <div className={candidate}>
       <div className={candidateInfo}>
         <ConditionalWrapper condition={candidateData.interviewURL}
-          wrapper={(children) => <a href={candidateData.interviewURL}>{children}</a>}>
+          wrapper={(children) => <a target="_blank" href={candidateData.interviewURL}>{children}</a>}>
           <h3 className={candidateName}>{candidateData.name}</h3>
           <h4 className={candidateParty}>{candidateData.party}</h4>
           <GatsbyImage alt={"Portrait of " + candidateData.name}

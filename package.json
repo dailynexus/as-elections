@@ -2,7 +2,7 @@
   "name": "as_elections",
   "private": true,
   "description": "Site for info about UCSB A.S. Elections.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Web Developer <web@dailynexus.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
