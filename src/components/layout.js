@@ -46,7 +46,13 @@ function Layout({ location, children }) {
         >
         <main>{childrenWithProps}</main>
         <footer>
-          © {new Date().getFullYear()} The Daily Nexus
+          © {new Date().getFullYear()} The Daily Nexus. 
+          <p style={{marginBottom: 0}}>
+            Feedback or suggestions? 
+            <a href="mailto:web@dailynexus.com" target="_blank" style={{marginLeft: "0.5rem"}}>
+              Send us an email!
+            </a>
+          </p>
         </footer>
       </div>
     </>
