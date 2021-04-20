@@ -20,7 +20,7 @@ import "../styles/base/_index.scss";
 library.add(faFacebook, faTwitter, faHome, faTimes, faQuestionCircle, faCaretRight, faShareSquare);
 
 function Layout({ location, children }) {
-  const [isMenuActive, setIsMenuActive] = useState(true);
+  const [isMenuActive, setIsMenuActive] = useState(false);
 
   const childrenWithProps = React.Children.map(children, (child) => 
     React.cloneElement(child, { isMenuActive: isMenuActive })

@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 const IndexPage = ({ data }) => {
   const [electionPositions, setElectionPositions] = useState([]);
   const [activePosition, setActivePosition] = useState("");
+  const [positionCandidates, setPositionCandidates] = useState({});
 
   useEffect(() => {
     let electionPositionsUpdated = [];
@@ -27,6 +28,40 @@ const IndexPage = ({ data }) => {
     setElectionPositions(electionPositionsUpdated);
     let initialPositionID = electionPositionsUpdated[0].replace(/ /g, '');
     setActivePosition(initialPositionID);
+
+    let positionCandidatesNew = {};
+    electionPositionsUpdated.map((position) => {
+      console.log(position);
+      // Construct a map of arrays for all candidates running for this position, with each array
+      // containing the candidates running under a given party
+      let matchingCandidates = {};
+      data.allCandidatesCsv.nodes.forEach((node) => {
+        if (node.position === position) {
+          if (!(node.party in matchingCandidates)) {
+            matchingCandidates[node.party] = [];
+          }
+
+          matchingCandidates[node.party].push(node);
+        }
+      });
+
+      // Flatten the previously constructed map of arrays into a single array of candidates,
+      // alternating between parties
+      let matchingCandidatesArray = [];
+      let i = 0;
+      while (elementsRemaining(matchingCandidates, i)) {
+        for (let party in matchingCandidates) {
+          if (matchingCandidates[party].length > i) {
+            matchingCandidatesArray.push(matchingCandidates[party][i]);
+          }
+        }
+
+        i++;
+      }
+
+      positionCandidatesNew[position] = matchingCandidatesArray;
+    });
+    setPositionCandidates(positionCandidatesNew);
   }, [data]);
 
   function elementsRemaining(arrays, i) {
@@ -48,35 +83,8 @@ const IndexPage = ({ data }) => {
       <div className="content">
         <section className="candidates">
           {electionPositions.map((position) => {
-            // Construct a map of arrays for all candidates running for this position, with each array
-            // containing the candidates running under a given party
-            let matchingCandidates = {};
-            data.allCandidatesCsv.nodes.forEach((node) => {
-              if (node.position === position) {
-                if (!(node.party in matchingCandidates)) {
-                  matchingCandidates[node.party] = [];
-                }
-
-                matchingCandidates[node.party].push(node);
-              }
-            });
-
-            // Flatten the previously constructed map of arrays into a single array of candidates,
-            // alternating between parties
-            let matchingCandidatesArray = [];
-            let i = 0;
-            while (elementsRemaining(matchingCandidates, i)) {
-              for (let party in matchingCandidates) {
-                if (matchingCandidates[party].length > i) {
-                  matchingCandidatesArray.push(matchingCandidates[party][i]);
-                }
-              }
-
-              i++;
-            }
-
             return (
-              <Position key={position} title={position} candidates={matchingCandidatesArray} questionData={data.allQuestionsJson.nodes}
+              <Position key={position} title={position} candidates={positionCandidates[position]} questionData={data.allQuestionsJson.nodes}
                 setActive={setActivePosition} />
             );
           })}
