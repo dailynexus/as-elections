@@ -8,15 +8,17 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from 'react-modal';
 
-import {overlay, modal, modalHeader, question as questionStyle} from "./questionnaire.module.scss";
+import {overlay, modal, modalHeader, closeButton, question as questionStyle} from "./questionnaire.module.scss";
 
 Modal.setAppElement('#___gatsby');
 
 function Questionnaire({ isOpen, close, data, questionData }) {
   return (
-    <Modal overlayClassName={overlay} className={modal} htmlOpenClassName="ReactModal__Html--open" isOpen={isOpen} onRequestClose={close}>
+    <Modal overlayClassName={overlay} className={modal} htmlOpenClassName="ReactModal__Html--open"
+      closeTimeoutMS={200}
+      isOpen={isOpen} onRequestClose={close}>
       <div className={modalHeader}>
-        <button onClick={close}>
+        <button className={closeButton} onClick={close}>
           <FontAwesomeIcon icon="times" />
         </button>
       </div>
