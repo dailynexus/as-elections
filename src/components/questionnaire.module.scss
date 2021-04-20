@@ -21,7 +21,6 @@
     outline: none;
     border: 1px solid rgb(204, 204, 204);
     margin: 0 auto;
-    padding: 40px;
     
     background: config.$colors-white none repeat scroll 0% 0%;
     overflow: auto;
@@ -29,14 +28,22 @@
 
 .modalHeader {
     position: sticky;
-    top: -40px;
-
-    margin-top: -40px;
-    padding: 10px;
+    top: 0;
+    padding: 10px 40px;
+    border-bottom: 1px solid black;
     background: config.$colors-white;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.candidateName {
+    font-weight: bold;
+}
+
+.candidatePosition {
+    color: rgb(80, 80, 80);
 }
 
 .closeButton {
@@ -51,6 +58,10 @@
     &:hover {
         background: darken(white, 20%);
     }
+}
+
+.questions {
+    padding: 40px 40px 0 40px;
 }
 
 .question {

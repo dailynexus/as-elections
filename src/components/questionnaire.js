@@ -8,7 +8,9 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from 'react-modal';
 
-import {overlay, modal, modalHeader, closeButton, question as questionStyle} from "./questionnaire.module.scss";
+import {overlay, modal, modalHeader, candidateInfo, candidateName, candidatePosition, closeButton,
+  questions, question as questionStyle}
+from "./questionnaire.module.scss";
 
 Modal.setAppElement('#___gatsby');
 
@@ -18,23 +20,29 @@ function Questionnaire({ isOpen, close, data, questionData }) {
       closeTimeoutMS={200}
       isOpen={isOpen} onRequestClose={close}>
       <div className={modalHeader}>
+        <div className={candidateInfo}>
+          <div className={candidateName}>{data.name}</div>
+          <div className={candidatePosition}>{data.position}</div>
+        </div>
         <button className={closeButton} onClick={close}>
           <FontAwesomeIcon icon="times" />
         </button>
       </div>
 
-      {questionData.map((question) => {
-        let questionPrefix = question.id.substring(1) + ".";
-        let questionText = question.question;
-        let questionAnswer = data[question.id];
+      <div className={questions}>
+        {questionData.map((question) => {
+          let questionPrefix = question.id.substring(1) + ".";
+          let questionText = question.question;
+          let questionAnswer = data[question.id];
 
-        return (
-          <div className={questionStyle} key={question.id}>
-            <h3>{questionPrefix} {questionText}</h3>
-            <div>{questionAnswer}</div>
-          </div>
-        );
-      })}
+          return (
+            <div className={questionStyle} key={question.id}>
+              <h3>{questionPrefix} {questionText}</h3>
+              <div>{questionAnswer}</div>
+            </div>
+          );
+        })}
+      </div>
     </Modal>
   );
 }
