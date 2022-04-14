@@ -4,6 +4,7 @@
 .position {
     @include base.rounded;
     margin-bottom: 50px;
+    padding: 10px 20px;
     background-color: config.$colors-white;
     @include base.shadow;
 }
