@@ -126,7 +126,7 @@ fragment candidateFields on CandidatesCsv {
   photo: Photo {
     childImageSharp {
       gatsbyImageData(
-        width: 500,
+        height: 500,
         placeholder: BLURRED
       )
     }

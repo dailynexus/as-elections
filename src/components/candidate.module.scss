@@ -34,6 +34,7 @@
 .candidatePortrait {
     width: 100%;
     margin-bottom: 8px;
+    aspect-ratio: 1;
     @include base.rounded;
 }
 
