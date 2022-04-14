@@ -5,7 +5,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { HamburgerSlider } from "react-animated-burgers"
+import Hamburger from "hamburger-react";
 
 import {menuButton} from "./menu-button.module.scss"
 
@@ -16,7 +16,7 @@ function MenuButton({ isActive, setActive }) {
 
   return (
     <div className={menuButton} onClick={toggleActive}>
-      <HamburgerSlider isActive={isActive} />
+      <Hamburger toggled={isActive} />
     </div>
   );
 }
