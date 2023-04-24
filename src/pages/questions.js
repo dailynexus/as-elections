@@ -10,24 +10,8 @@ function QuestionsPage({ data }) {
   const [candidateData, setCandidateData] = useState([]);
   const [activeQuestion, setActiveQuestion] = useState("");
 
-  function elementsRemaining(arrays, i) {
-    for (let key in arrays) {
-      if (arrays[key].length > i) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
   useEffect(() => {
-    let electionPositions = [];
-
     data.allCandidatesCsv.nodes.forEach((node) => {
-      if (electionPositions.indexOf(node.position) === -1) {
-        electionPositions.push(node.position);
-      }
-
       // Replace newlines (carriage returns) in question responses with spaces
       data.allQuestionsJson.nodes.forEach((questionNode) => {
         node[questionNode.id] = node[questionNode.id].replace(/\r/g, " "); 
@@ -36,38 +20,26 @@ function QuestionsPage({ data }) {
 
     setActiveQuestion(data.allQuestionsJson.nodes[0].id);
 
-    let matchingCandidatesArray = [];
-    electionPositions.forEach((position) => {
-      let matchingCandidates = {};
+    // Previously when grouping the candidates by position, we also needed to divide the candidates by party, so
+    // that we could alternate between parties when displaying the candidates for a given position.
+    // If for some reason senators run under parties again in the future, look at previous commits to see how to do it.
+    // You could probably just replace the sort below with a manual "sort" that first groups them by position, then
+    // alternates between parties within that position.
 
-      data.allCandidatesCsv.nodes.forEach((node) => {
-        if (node.position === position) {
-          for (let question of data.allQuestionsJson.nodes) {
-            if (node[question.id] !== '') {
-              if (!(node.party in matchingCandidates)) {
-                matchingCandidates[node.party] = [];
-              }
-
-              matchingCandidates[node.party].push(node);
-              break;
-            }
-          }
+    // First: Check for candidates with an answer to any questionnaire question (to avoid including executives & people who didn't answer the questionnaire at all)
+    // Second: Sort the candidates by position so competing senators are displayed next to each other
+    let newCandidateData = data.allCandidatesCsv.nodes.filter(candidate => {
+      for (let question of data.allQuestionsJson.nodes) {
+        // candidate had a non-empty response to this question
+        if (candidate[question.id] !== '') {
+          return true;
         }
-      });
-
-      let i = 0;
-      while (elementsRemaining(matchingCandidates, i)) {
-        for (let party in matchingCandidates) {
-          if (matchingCandidates[party].length > i) {
-            matchingCandidatesArray.push(matchingCandidates[party][i]);
-          }
-        }
-
-        i++;
       }
-    });
 
-    setCandidateData(matchingCandidatesArray);
+      return false;
+    }).sort((a, b) => a.position.localeCompare(b.position));
+
+    setCandidateData(newCandidateData);
   }, [data]);
   
   return (
@@ -116,7 +88,6 @@ fragment candidateFields on CandidatesCsv {
   id
   position: Running_For
   name: Name
-  party: Party
   photo: Photo {
     childImageSharp {
       gatsbyImageData (
@@ -127,7 +98,7 @@ fragment candidateFields on CandidatesCsv {
   } 
   photoURL: Photo_URL
   pronouns: Pronouns
-  interviewURL: Interview_URL
+  interviewURL: Endorsement_URL
   year: Year
   major: Major
   BlurbP1

@@ -31,35 +31,11 @@ const IndexPage = ({ data }) => {
 
     let positionCandidatesNew = {};
     electionPositionsUpdated.map((position) => {
-      console.log(position);
-      // Construct a map of arrays for all candidates running for this position, with each array
-      // containing the candidates running under a given party
-      let matchingCandidates = {};
-      data.allCandidatesCsv.nodes.forEach((node) => {
-        if (node.position === position) {
-          if (!(node.party in matchingCandidates)) {
-            matchingCandidates[node.party] = [];
-          }
-
-          matchingCandidates[node.party].push(node);
-        }
-      });
-
-      // Flatten the previously constructed map of arrays into a single array of candidates,
-      // alternating between parties
-      let matchingCandidatesArray = [];
-      let i = 0;
-      while (elementsRemaining(matchingCandidates, i)) {
-        for (let party in matchingCandidates) {
-          if (matchingCandidates[party].length > i) {
-            matchingCandidatesArray.push(matchingCandidates[party][i]);
-          }
-        }
-
-        i++;
-      }
-
-      positionCandidatesNew[position] = matchingCandidatesArray;
+      // Previously when grouping the candidates by position, we also needed to divide the candidates by party, so
+      // that we could alternate between parties when displaying the candidates for a given position.
+      // If for some reason senators run under parties again in the future, look at previous commits to see how to do it.
+      let matchingCandidates = data.allCandidatesCsv.nodes.filter(candidate => candidate.position === position) ;
+      positionCandidatesNew[position] = matchingCandidates;
     });
     setPositionCandidates(positionCandidatesNew);
   }, [data]);
@@ -122,7 +98,6 @@ fragment candidateFields on CandidatesCsv {
   id
   position: Running_For
   name: Name
-  party: Party
   photo: Photo {
     childImageSharp {
       gatsbyImageData(
@@ -133,7 +108,7 @@ fragment candidateFields on CandidatesCsv {
   } 
   photoURL: Photo_URL
   pronouns: Pronouns
-  interviewURL: Interview_URL
+  interviewURL: Endorsement_URL
   year: Year
   major: Major
   BlurbP1

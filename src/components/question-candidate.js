@@ -22,7 +22,7 @@ function QuestionCandidate({ candidateData, questionID }) {
         <div className={candidateInfo}>
           <h3 className={name}>{candidateData.name}</h3>
           <h4 className={extraInfo}>{candidateData.position}</h4>
-          <h4 className={extraInfo}>{candidateData.party}</h4>
+          {/*<h4 className={extraInfo}>{candidateData.party}</h4>*/}
         </div>
 
         <p>

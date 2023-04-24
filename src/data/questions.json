@@ -1,7 +1,7 @@
 [
   {
     "id": "Q1",
-    "question": "Why are you running to be a senator with the 73rd senate?"
+    "question": "Why are you running to be a senator with the 74th senate?"
   },
   {
     "id": "Q2",
@@ -21,7 +21,7 @@
   },
   {
     "id": "Q6",
-    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2022-2023 school year?"
+    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2023-2024 school year?"
   },
   {
     "id": "Q7",
@@ -29,11 +29,11 @@
   },
   {
     "id": "Q8",
-    "question": "What would you say best describes your voting interests in politics at all levels? Please mark all that apply. (Transparency note: We are asking this question because we believe many in the UCSB community would like to know the political leanings of prospective A.S. candidates, since so many Senate decisions reflect opinions on real-world political issues)."
+    "question": "What would you say best describes your voting interests in politics at all levels?"
   },
   {
     "id": "Q9",
-    "question": "How would you assess the work of the 72nd A.S. Senate in addressing the needs of the student body?"
+    "question": "How would you assess the work of the 73rd A.S. Senate in addressing the needs of the student body?"
   },
   {
     "id": "Q10",
@@ -49,30 +49,30 @@
   },
   {
     "id": "Q13",
-    "question": "During the past several years, allegations against UCSB fraternities and sororities have been brought to the university and/or shared on social media concerning sexual assault, breaking coronavirus social distancing protocols, and hazing. Do you believe the university has appropriately handled these allegations, and how should school-affiliated organizations be held accountable for allegations of this nature?"
-  },
-  {
-    "id": "Q14",
     "question": "Are you familiar with the university’s Title IX office and its functions? What do you believe the university can do more to support survivors of sexual assault?"
   },
   {
-    "id": "Q15",
-    "question": "Do you believe UCSB is effectively serving historically underrepresented groups, including members of the Black, Latinx, Indigenous, LGBTQ+ community and others?"
+    "id": "Q14",
+    "question": "Do you believe UCSB is effectively serving historically underrepresented groups, including members of the Black, Latine, Indigenous, LGBTQ+ community and others?"
   },
   {
-    "id": "Q16",
+    "id": "Q15",
     "question": "If you are elected to serve on the Senate, what will be the first bill or resolution that you plan to author?"
   },
   {
-    "id": "Q17",
+    "id": "Q16",
     "question": "A.S. is typically seen as inaccessible to the average student. As a senator, how would you work to involve the student body more and keep them informed about what the Senate is doing? Please detail specific steps you would take."
   },
   {
+    "id": "Q17",
+    "question": "The 2022-23 A.S. Senate faced unprecedented internal dysfunction. The Senate did not meet for 7 weeks amidst allegations of negligence, financial mismanagement, anti-Blackness and discrimination, and violations of legal code. How would you have handled this situation as a Senator? If you were a Senator during this time, critique your performance dealing with these challenges."
+  },
+  {
     "id": "Q18",
-    "question": "UCSB is currently transitioning away from remote learning and is lifting its mask mandate this spring. If elected, how do you believe the Senate and university at large should protect the health of its student body while providing them a high-quality education?"
+    "question": "This year's A.S. also saw unprecedented usage of presidential executive order, which A.S. President Gurleen Pabla utilized to remove former IVP Bee Shaefer from her position for failing to perform the duties of her office. As a Senator, what do you see as the role of executive orders as they pertain specifically to Senate business and to A.S. matters as a whole?"
   },
   {
     "id": "Q19",
-    "question": "In what ways do you believe the university succeeded and failed in handling the coronavirus pandemic and remote instruction in terms of students' physical and mental health?"
+    "question": "Another impact of A.S. dysfunction was backups in A.S. employee honoraria. How would you streamline the honoraria process or prevent situations like this from occurring in the future?"
   }
 ]

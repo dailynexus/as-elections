@@ -56,7 +56,7 @@ function Candidate({ candidateData, questionData }) {
         <ConditionalWrapper condition={candidateData.interviewURL}
           wrapper={(children) => <a target="_blank" href={candidateData.interviewURL}>{children}</a>}>
           <h3 className={candidateName}>{candidateData.name}</h3>
-          <h4 className={candidateParty}>{candidateData.party}</h4>
+          {/*<h4 className={candidateParty}>{candidateData.party}</h4>*/}
           <GatsbyImage alt={"Portrait of " + candidateData.name}
             className={candidatePortrait}
             image={getImage(candidateData.photo)} />
