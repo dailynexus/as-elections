@@ -123,14 +123,14 @@ fragment candidateFields on CandidatesCsv {
   Q8
   Q9
   Q10
+  Q10a
   Q11
+  Q11a
   Q12
   Q13
   Q14
   Q15
   Q16
   Q17
-  Q18
-  Q19
 }
 `

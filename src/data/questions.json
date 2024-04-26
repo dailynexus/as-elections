@@ -1,19 +1,19 @@
 [
   {
     "id": "Q1",
-    "question": "Why are you running to be a senator with the 74th senate?"
+    "question": "Why are you running to be a senator with the 75th senate?"
   },
   {
     "id": "Q2",
-    "question": "What have you been involved with on campus or in Isla Vista that you believe has prepared you to be a senator?"
+    "question": "What have you been involved with on campus or in Isla Vista that has prepared you to run for senate?"
   },
   {
     "id": "Q3",
-    "question": "Detail at least three resolutions or bills you’d like to introduce while in office."
+    "question": "Detail at least three resolutions or bills you’d like to introduce during your term. "
   },
   {
     "id": "Q4",
-    "question": "Describe your platform and specifically how you will work to achieve your goals while in office."
+    "question": "Describe your platform and specifically how you will work to achieve your goals during your term."
   },
   {
     "id": "Q5",
@@ -21,7 +21,7 @@
   },
   {
     "id": "Q6",
-    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2023-2024 school year?"
+    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2024-2025 school year?"
   },
   {
     "id": "Q7",
@@ -29,19 +29,27 @@
   },
   {
     "id": "Q8",
-    "question": "What would you say best describes your voting interests in politics at all levels?"
+    "question": "What would you say best describes your voting interests in politics at all levels? Please mark all that apply. (Transparency note: We are asking this question because we believe many in the UCSB community would like to know the political leanings of prospective A.S. candidates, since so many Senate decisions reflect opinions on real-world political issues)."
   },
   {
     "id": "Q9",
-    "question": "How would you assess the work of the 73rd A.S. Senate in addressing the needs of the student body?"
+    "question": "How would you assess the work of the 74th A.S. Senate in addressing the needs of the student body?"
   },
   {
     "id": "Q10",
     "question": "A.S. UCSB is the only undergraduate ASUC that has not formally passed a resolution divesting from companies that allegedly profit from human rights violations in Israel. Would you vote in favor of a resolution to divest in alignment with the Boycott, Divestment and Sanctions movement?"
   },
   {
+    "id": "Q10a",
+    "question": "Please briefly explain your answer to Question 10 (fewer than 100 words)."
+  },
+  {
     "id": "Q11",
     "question": "Do you believe that UCSB should be tuition-free?"
+  },
+  {
+    "id": "Q11a",
+    "question": "Please briefly explain your answer to Question 11 (fewer than 100 words)."
   },
   {
     "id": "Q12",
@@ -57,22 +65,14 @@
   },
   {
     "id": "Q15",
-    "question": "If you are elected to serve on the Senate, what will be the first bill or resolution that you plan to author?"
-  },
-  {
-    "id": "Q16",
     "question": "A.S. is typically seen as inaccessible to the average student. As a senator, how would you work to involve the student body more and keep them informed about what the Senate is doing? Please detail specific steps you would take."
   },
   {
+    "id": "Q16",
+    "question": "Our campus climate is currently experiencing division and hostility among students surrounding Israel and Palestine. What do you see as the Senate's role during this time, and how should they be communicating with their constituents?"
+  },
+  {
     "id": "Q17",
-    "question": "The 2022-23 A.S. Senate faced unprecedented internal dysfunction. The Senate did not meet for 7 weeks amidst allegations of negligence, financial mismanagement, anti-Blackness and discrimination, and violations of legal code. How would you have handled this situation as a Senator? If you were a Senator during this time, critique your performance dealing with these challenges."
-  },
-  {
-    "id": "Q18",
-    "question": "This year's A.S. also saw unprecedented usage of presidential executive order, which A.S. President Gurleen Pabla utilized to remove former IVP Bee Shaefer from her position for failing to perform the duties of her office. As a Senator, what do you see as the role of executive orders as they pertain specifically to Senate business and to A.S. matters as a whole?"
-  },
-  {
-    "id": "Q19",
-    "question": "Another impact of A.S. dysfunction was backups in A.S. employee honoraria. How would you streamline the honoraria process or prevent situations like this from occurring in the future?"
+    "question": "UCSB temporarily suspended the MCC, its services and its Instagram account following pro-Palestine student activists posting signage during a Feb. 26 gathering at the center, expressing pro-Palestine and anti-Zionist sentiment as well as dissent against specific university administration and Associated Students figures, including current A.S. President Tessa Veksler. The signage resulted in community backlash and social media doxxing of MCC faculty, staff and affiliated students. How would you critique the 74th Senate's handling of this situation, and how would you have handled this situation as Senator?"
   }
 ]
