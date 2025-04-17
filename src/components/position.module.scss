@@ -2,29 +2,34 @@
 @use "../styles/config";
 
 .position {
-    @include base.rounded;
-    margin-bottom: 50px;
-    padding: 10px 20px;
-    background-color: config.$colors-white;
-    @include base.shadow;
+  flex: 1 1 calc(33.333% - 1rem); // 3 items per row, minus gap
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .positionTitle {
-    border-bottom: 1px solid config.$colors-primary;
-    padding: 1.5rem;
+  border-bottom: 1px solid config.$colors-primary;
+  padding: 1.5rem;
 
-    font-size: 2rem;
-    text-align: center;
-    text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
 
-    color: config.$colors-primary;
+  color: config.$colors-primary;
 }
 
 .candidates {
-    @include base.flex(row, center, stretch);
+  @include base.flex(row, center, stretch);
+  flex-wrap: wrap;
+  gap: 1rem; // optional spacing
+  max-width: 960px; // or whatever fits 3 cards nicely
+  margin: 0 auto;
 }
 
 .anchor {
-    position: relative;
-    top: -120px;
+  position: relative;
+  top: -120px;
 }
