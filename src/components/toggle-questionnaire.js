@@ -7,14 +7,14 @@ import PropTypes from "prop-types";
 
 import "./button.scss";
 
-function ToggleQuestionnaire({ isOpen, setIsOpen }) {
+function ToggleQuestionnaire({ isOpen, setIsOpen, text}) {
   function toggleQuestionnaireOpen() {
     setIsOpen(!isOpen);
   }
 
   return (
-    <button className="button" onClick={toggleQuestionnaireOpen}>
-      View Questionnaire
+    <button className={text === "View Candidates" ? "button" : "button-alt"} onClick={toggleQuestionnaireOpen}>
+      {text}
     </button>
   );
 }

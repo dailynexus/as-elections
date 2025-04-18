@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Menu from "../components/menu"
 import Position from "../components/position"
 import SEO from "../components/seo"
-
+import {candidates} from "../components/position.module.scss";
 const IndexPage = ({ data }) => {
   const [electionPositions, setElectionPositions] = useState([]);
   const [activePosition, setActivePosition] = useState("");
@@ -56,15 +56,18 @@ const IndexPage = ({ data }) => {
 
       <Menu positions={electionPositions} activePosition={activePosition} setActivePosition={setActivePosition} />
 
-      <div className="content">
-        <section className="candidates">
+
+    
+      <h1 style={{ padding: '1rem 0', textAlign: 'center'}}>Elective Positions</h1>
+
+      <div className={candidates}>
+        
           {electionPositions.map((position) => {
             return (
               <Position key={position} title={position} candidates={positionCandidates[position]} questionData={data.allQuestionsJson.nodes}
                 setActive={setActivePosition} />
             );
           })}
-        </section>
       </div>
     </Layout>
   )

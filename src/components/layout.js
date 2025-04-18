@@ -25,6 +25,7 @@ function Layout({ location, children }) {
   const childrenWithProps = React.Children.map(children, (child) => 
     React.cloneElement(child, { isMenuActive: isMenuActive })
   );
+  
 
   useEffect(() => {
     if (location === '/') {
@@ -37,7 +38,7 @@ function Layout({ location, children }) {
   return (
     <>
       <Header isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
-
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
       <div
         style={{
           margin: `0 auto`,

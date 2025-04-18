@@ -1,0 +1,120 @@
+@use '../styles/base';
+@use '../styles/base/mixins';
+@use '../styles/config';
+
+.overlay {
+  @include base.flex(column);
+
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1000;
+  width: 100%;
+  pointer-events: all; 
+}
+
+.modal {
+  position: relative;  /* Keep modal inside the page flow */
+  margin: 20px auto;  /* Center modal */
+  width: 100%;
+  margin-top: 500px;
+  max-width: 1000px;
+  background: config.$colors-white;
+  border: 1px solid rgb(204, 204, 204);
+  z-index: 1000;  /* Ensure modal content is above overlay */
+  padding: 20px;
+  outline: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;  /* Ensure content inside modal is stacked vertically */
+  overflow: visible;  /* Make sure modal content can grow and show */
+
+  background: config.$colors-white none repeat scroll 0% 0%;
+
+  @include mixins.desktop {
+    max-width: 1000px;
+  }
+}
+
+.positionInfo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modalHeader {
+  position: sticky;
+  top: 0;
+  padding: 10px 40px;
+  border-bottom: 1px solid black;
+  background: config.$colors-white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionName {
+  //border-bottom: 1px solid config.$colors-primary;
+  padding: 1.5rem;
+
+  font-size: 1.5rem;
+  font-family: 'Nunito Sans', sans-serif;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.candidatePosition {
+  color: rgb(80, 80, 80);
+}
+
+.closeButton {
+  width: 50px;
+  height: 50px;
+  background: rgba(34, 66, 79, 0.5);
+  border-radius: 50%;
+  border: 1px solid #22424F;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(white, 20%);
+  }
+}
+
+
+.candidatesStyle {
+  @include base.flex(row, center, stretch);
+  flex-wrap: wrap;
+  gap: 1rem; // optional spacing
+  max-width: 2000px; // or whatever fits 3 cards nicely
+  margin: 0 auto;
+}
+.questions {
+  padding: 40px 40px 0 40px;
+}
+
+.question {
+  margin-bottom: 1.5rem;
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+:global(.ReactModal__Overlay) {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+:global(.ReactModal__Overlay--after-open) {
+  opacity: 1;
+}
+
+:global(.ReactModal__Overlay--before-close) {
+  opacity: 0;
+}

@@ -1,12 +1,22 @@
 @use "../styles/base";
 @use "../styles/config";
 
+// #3F9E9C, #22424D,
+
+$colors: #22424F;
+
 .position {
-  flex: 1 1 calc(33.333% - 1rem); // 3 items per row, minus gap
-  background: white;
-  border-radius: 0.5rem;
+  flex: 1 1 calc(33.333% - rem); // 3 items per row, minus gap
+  flex-basis: auto;
+  flex-grow: 1;
+
+  @include base.flex(column, space-between, center);
+  padding: 10px;
+  background-color: rgba(nth($colors, random(length($colors))), 0.7);
+  //box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 0.25rem;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(15, 16, 15, 0.1);
   box-sizing: border-box;
 }
 
@@ -14,18 +24,20 @@
   border-bottom: 1px solid config.$colors-primary;
   padding: 1.5rem;
 
-  font-size: 2rem;
+  font-size: 0.8rem;
+  font-family: 'Nunito Sans', sans-serif;
+
   text-align: center;
   text-transform: uppercase;
 
-  color: config.$colors-primary;
+  color: #f8f8ff
 }
 
 .candidates {
   @include base.flex(row, center, stretch);
   flex-wrap: wrap;
   gap: 1rem; // optional spacing
-  max-width: 960px; // or whatever fits 3 cards nicely
+  max-width: 2000px; // or whatever fits 3 cards nicely
   margin: 0 auto;
 }
 

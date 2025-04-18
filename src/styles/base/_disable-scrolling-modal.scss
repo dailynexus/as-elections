@@ -1,4 +1,6 @@
-.ReactModal__Body--open,
+.ReactModal__Body--open {
+  overflow: visible; 
+}
 .ReactModal__Html--open {
-  overflow: hidden;
+  //overflow: hidden;
 }

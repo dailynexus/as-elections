@@ -10,8 +10,10 @@
 
     color: config.$colors-white;
     background: config.$colors-primary;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     text-decoration: none;
+    font-size: 0.8rem;
+   font-family: 'Nunito Sans', sans-serif;
 
     cursor: pointer;
     transition: all 0.4s ease 0s;
@@ -24,4 +26,31 @@
         box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
         transition: all 0.4s ease 0s;
     }
+}
+
+.button-alt {
+  width: 100%;
+
+  border: none;
+  padding: 1.25rem;
+  @include base.rounded;
+
+  color: config.$colors-white;
+  background: config.$colors-secondary;
+  //text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8rem;
+ font-family: 'Nunito Sans', sans-serif;
+
+  cursor: pointer;
+  transition: all 0.4s ease 0s;
+
+  &:hover {
+      background: #434343;
+      letter-spacing: 1px;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.4s ease 0s;
+  }
 }

@@ -5,4 +5,5 @@
 
 body {
     background: config.$colors-background;
+    overflow-y: scroll !important;
 }

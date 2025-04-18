@@ -10,7 +10,7 @@ import ConditionalWrapper from "./conditional-wrapper";
 import Questionnaire from "./questionnaire";
 import ToggleQuestionnaire from "./toggle-questionnaire";
 
-import {candidate, candidateInfo, candidateName, candidateParty, candidatePortrait, blurb, endorsement}
+import { candidate, candidateInfo, candidateName, candidateParty, candidatePortrait, blurb, endorsement }
   from "./candidate.module.scss";
 
 function Candidate({ candidateData, questionData }) {
@@ -66,10 +66,11 @@ function Candidate({ candidateData, questionData }) {
       {hasQuestionnaireData && (
         <>
           <ToggleQuestionnaire isOpen={isQuestionnaireOpen}
-            setIsOpen={setIsQuestionnaireOpen} />
+            setIsOpen={setIsQuestionnaireOpen} 
+            text={"View Responses"}/>
 
           <Questionnaire isOpen={isQuestionnaireOpen} close={closeQuestionnaire} data={candidateData}
-          questionData={questionData} />
+            questionData={questionData} />
         </>
       )}
 
