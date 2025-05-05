@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
 
 
     
-      <h1 style={{ padding: '1rem 0', textAlign: 'center'}}>Elective Positions</h1>
+      <h1 style={{ padding: '1rem 0', textAlign: 'center'}}>A.S. Spring General Election Senate Candidates</h1>
 
       <div className={candidates}>
         
@@ -126,7 +126,6 @@ fragment candidateFields on CandidatesCsv {
   Q8
   Q9
   Q10
-  Q10a
   Q11
   Q11a
   Q12

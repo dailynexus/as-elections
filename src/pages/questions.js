@@ -113,7 +113,6 @@ fragment candidateFields on CandidatesCsv {
   Q8
   Q9
   Q10
-  Q10a
   Q11
   Q11a
   Q12

@@ -5,12 +5,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { withPrefix } from "gatsby";
 
 import ConditionalWrapper from "./conditional-wrapper";
 import Questionnaire from "./questionnaire";
 import ToggleQuestionnaire from "./toggle-questionnaire";
 
-import { candidate, candidateInfo, candidateName, candidateParty, candidatePortrait, blurb, endorsement }
+import { candidate, candidateInfo, candidateName, candidateParty, candidatePortrait, blurb, endorsement, candidatePronouns }
   from "./candidate.module.scss";
 
 function Candidate({ candidateData, questionData }) {
@@ -19,6 +20,7 @@ function Candidate({ candidateData, questionData }) {
   function closeQuestionnaire() {
     setIsQuestionnaireOpen(false);
   }
+
 
   let candidateBlurbP1;
   let candidateBlurbP2;
@@ -56,18 +58,25 @@ function Candidate({ candidateData, questionData }) {
         <ConditionalWrapper condition={candidateData.interviewURL}
           wrapper={(children) => <a target="_blank" href={candidateData.interviewURL}>{children}</a>}>
           <h3 className={candidateName}>{candidateData.name}</h3>
+          <h4 className={candidatePronouns}>{candidateData.pronouns}</h4>
           {/*<h4 className={candidateParty}>{candidateData.party}</h4>*/}
-          <GatsbyImage alt={"Portrait of " + candidateData.name}
-            className={candidatePortrait}
-            image={getImage(candidateData.photo)} />
+          {candidateData.photo ? (
+            <GatsbyImage
+              alt={"Portrait of " + candidateData.name}
+              className={candidatePortrait}
+              image={getImage(candidateData.photo)}
+            />
+          ) : (
+            <div className={candidatePortrait} aria-label={"No portrait available for " + candidateData.name} />
+          )}
         </ConditionalWrapper>
       </div>
 
       {hasQuestionnaireData && (
         <>
           <ToggleQuestionnaire isOpen={isQuestionnaireOpen}
-            setIsOpen={setIsQuestionnaireOpen} 
-            text={"View Responses"}/>
+            setIsOpen={setIsQuestionnaireOpen}
+            text={"View Responses"} />
 
           <Questionnaire isOpen={isQuestionnaireOpen} close={closeQuestionnaire} data={candidateData}
             questionData={questionData} />

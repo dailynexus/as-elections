@@ -31,9 +31,32 @@
   margin-bottom: 12px;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.0rem;
+  font-weight: bold;
   text-align: center;
 
 }
+
+.candidateName {
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.0rem;
+  font-weight: bold;
+  text-align: center;
+  color: #22424D;
+
+}
+
+.candidatePronouns {
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  color: #22424D;
+}
+
 
 .candidateParty {
   font-size: 1rem;
@@ -50,6 +73,10 @@
   margin-bottom: 8px;
   object-fit: cover;
   @include base.rounded;
+
+  &.placeholder {
+    background-color: #ffffff; // white background
+  }
 }
 
 .blurb {

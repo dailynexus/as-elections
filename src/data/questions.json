@@ -1,7 +1,7 @@
 [
   {
     "id": "Q1",
-    "question": "Why are you running to be a senator with the 75th senate?"
+    "question": "Why are you running to be a senator with the 76th senate?"
   },
   {
     "id": "Q2",
@@ -21,7 +21,7 @@
   },
   {
     "id": "Q6",
-    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2024-2025 school year?"
+    "question": "How will you make yourself available to your constituents during your term — in both a remote and in-person capacity — during the 2025-2026 school year?"
   },
   {
     "id": "Q7",
@@ -33,15 +33,11 @@
   },
   {
     "id": "Q9",
-    "question": "How would you assess the work of the 74th A.S. Senate in addressing the needs of the student body?"
+    "question": "How would you assess the work of the 75th A.S. Senate in addressing the needs of the student body?"
   },
   {
     "id": "Q10",
-    "question": "A.S. UCSB is the only undergraduate ASUC that has not formally passed a resolution divesting from companies that allegedly profit from human rights violations in Israel. Would you vote in favor of a resolution to divest in alignment with the Boycott, Divestment and Sanctions movement?"
-  },
-  {
-    "id": "Q10a",
-    "question": "Please briefly explain your answer to Question 10 (fewer than 100 words)."
+    "question": "What are you looking for in the new chancellor of UCSB? How do you plan on working with them, and what do you hope they will accomplish?"
   },
   {
     "id": "Q11",
@@ -69,10 +65,10 @@
   },
   {
     "id": "Q16",
-    "question": "Our campus climate is currently experiencing division and hostility among students surrounding Israel and Palestine. What do you see as the Senate's role during this time, and how should they be communicating with their constituents?"
+    "question": "The Trump administration is currently threatening the livelihoods of international students on college campuses and withholding funding from universities for a variety of reasons. What, if anything, do you plan to do in regards to student rights/safety on campus in the wake of these policies?"
   },
   {
     "id": "Q17",
-    "question": "UCSB temporarily suspended the MCC, its services and its Instagram account following pro-Palestine student activists posting signage during a Feb. 26 gathering at the center, expressing pro-Palestine and anti-Zionist sentiment as well as dissent against specific university administration and Associated Students figures, including current A.S. President Tessa Veksler. The signage resulted in community backlash and social media doxxing of MCC faculty, staff and affiliated students. How would you critique the 74th Senate's handling of this situation, and how would you have handled this situation as Senator?"
+    "question": "Explain how you plan to work with others in A.S. and how you plan to improve campus climate in and out of A.S."
   }
 ]

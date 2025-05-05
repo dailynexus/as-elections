@@ -47,12 +47,7 @@ function Layout({ location, children }) {
         >
         <main>{childrenWithProps}</main>
         <footer>
-          <p><i>
-            Edited on May 17: A previous version of this elections guide 
-            included questionnaire answers that Leon Barhoum did not submit, 
-            this guide has been updated to reflect that Barhoum did not submit 
-            any questionnaire answers.
-          </i></p>
+          "Senate candidates who did not respond to the questionnaire are not included"
           © {new Date().getFullYear()} The Daily Nexus. 
           <p style={{marginBottom: 0}}>
             Feedback or suggestions? 

@@ -2,20 +2,59 @@
  * Modal component to display a senator's responses to the questionnaire.
  */
 
-import React from "react";
+import React, { useEffect, useRef, useState, } from "react";
 import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from 'react-modal';
 
-import {overlay, modal, modalHeader, candidateInfo, candidateName, candidatePosition, closeButton,
-  questions, question as questionStyle}
-from "./questionnaire.module.scss";
+import {
+  overlay, modal, modalHeader, candidateInfo, candidateName, candidatePosition, closeButton,
+  questions, question as questionStyle, modalWrapper
+}
+  from "./questionnaire.module.scss";
 
 Modal.setAppElement('#___gatsby');
 
+
 function Questionnaire({ isOpen, close, data, questionData }) {
+
+  const wrapperRef = useRef(null);
+    const [overlayHeight, setOverlayHeight] = useState(0);
+    const overlayRef = useRef();
+
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        // Add a small delay to ensure the modal is rendered
+        const overlays = document.querySelectorAll('body .' + CSS.escape(overlay));
+        console.log("Searching 2 for: ", 'body .' + overlay);
+        console.log("Number of overlays found:", overlays.length);
+
+        const totalPageHeight = document.documentElement.scrollHeight;
+
+        // Set the height for each overlay
+        overlays.forEach((overlay) => {
+          overlay.style.height = `${totalPageHeight}px`;
+        });
+        if (isOpen && wrapperRef.current) {
+          const modal = wrapperRef.current;
+          const offset = 10; // Adjust this value to control the offset amount
+          const modalTop = modal.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({
+            top: modalTop - offset, // Adjust the scroll position by subtracting the offset
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
+      }, 100);
+    }
+  }, [isOpen]);
+
   return (
+    <div ref={wrapperRef} className={modalWrapper}>
     <Modal overlayClassName={overlay} className={modal} htmlOpenClassName="ReactModal__Html--open"
       closeTimeoutMS={200}
       isOpen={isOpen} onRequestClose={close}>
@@ -44,6 +83,7 @@ function Questionnaire({ isOpen, close, data, questionData }) {
         })}
       </div>
     </Modal>
+    </div >
   );
 }
 
